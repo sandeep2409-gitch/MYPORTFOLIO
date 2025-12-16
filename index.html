@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandeep | Portfolio</title>
+
+  
+  <meta name="description" content="Portfolio of Sandeep Manchinasetti - Python, C++, Java, Machine Learning, Web Development">
+  <meta name="keywords" content="Sandeep, Portfolio, Python, C++, Java, Machine Learning, GitHub">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <style>
+    body {
+      font-family:'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+      transition: all 0.6s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc, #6a11cb);
+      color: white;
+      position: relative;
+      transition: all 0.6s ease;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 15px;
+      transition: transform 0.4s ease;
+      animation: pulse 2s infinite;
+    }
+    header img:hover { transform: scale(1.1) rotate(5deg); }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    header h1 { margin: 10px 0; font-size: 2.5em; }
+    header p { font-size: 1.2em; opacity: 0.9; }
+
+    .section { padding: 50px 20px; max-width: 1000px; margin: auto; transition: all 0.6s ease; }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #2575fc;
+      position: relative;
+      transition: all 0.6s ease;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #2575fc;
+      margin: 10px auto 0;
+      border-radius: 2px;
+      transition: width 0.5s;
+    }
+    .section h2:hover::after { width: 100px; }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+   
+    .skills {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.6s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.08) rotate3d(1,1,0,8deg) translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+      color: white;
+    }
+    .card i {
+      font-size: 1.5em;
+      margin-right: 10px;
+      transition: transform 0.3s;
+    }
+    .card:hover i { transform: translateY(-5px) scale(1.2); color: #ffd700; }
+
+    
+    .python:hover { background: #306998; }
+    .cpp:hover { background: #00599C; }
+    .java:hover { background: #E76F00; }
+    .ml:hover { background: #27ae60; }
+    .htmlcss:hover { background: #e44d26; }
+    .git:hover { background: #24292e; }
+    .project1:hover { background: #6a1b9a; }
+    .project2:hover { background: #d32f2f; }
+    .project3:hover { background: #1976d2; }
+    .project4:hover { background: #388e3c; }
+
+    .contact-cards .card { text-align: center; padding: 30px; }
+    .contact-cards i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      transition: transform 0.4s, color 0.4s;
+    }
+    .contact-cards .card:hover i { transform: translateY(-5px) scale(1.3); color: #00c6ff; }
+    
+    .socials { margin-top: 15px; }
+    .socials a { margin: 0 10px; font-size: 1.5em; color: white; transition: all 0.4s ease; }
+    .socials a:hover { color: #ffd700; }
+
+    .dark-mode { background: #121212; color: #eee; }
+    .dark-mode header { background: linear-gradient(135deg, #222, #333); }
+    .dark-mode .card { background: #1e1e1e; color: #eee; box-shadow: 0 4px 12px rgba(255,255,255,0.1); }
+    .dark-mode .card:hover { box-shadow: 0 8px 16px rgba(255,255,255,0.2); }
+    .dark-mode .section h2 { color: #ffd700; }
+
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: all 0.4s ease;
+    }
+    .dark-toggle:hover { background: #ddd; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8em; }
+      .card { padding: 15px; font-size: 0.9em; }
+      .skills { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <button class="dark-toggle"><i class="fas fa-moon"></i></button>
+    <img src="sandeeppic.jpg" alt="Sandeep Photo" loading="lazy" data-aos="zoom-in">
+    <h1 data-aos="fade-up">Sandeep Manchinasetti</h1>
+    <div class="socials" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://wa.me/917093094306" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://github.com/sandeep2409-gitch" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/lovly_pandu07/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </header>
+
+  <div class="section">
+    <h2 data-aos="fade-right">Skills</h2>
+    <div class="skills">
+      <div class="card python" data-aos="fade-up"><i class="fab fa-python"></i> Python</div>
+      <div class="card cpp" data-aos="fade-up"><i class="fas fa-code"></i> C++</div>
+      <div class="card java" data-aos="fade-up"><i class="fab fa-java"></i> Java</div>
+      <div class="card ml" data-aos="fade-up"><i class="fas fa-robot"></i> Machine Learning</div>
+      <div class="card htmlcss" data-aos="fade-up"><i class="fab fa-html5"></i> HTML & CSS</div>
+      <div class="card git" data-aos="fade-up"><i class="fab fa-github"></i> Git & GitHub</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 data-aos="fade-left">Projects</h2>
+    <div class="projects">
+      <div class="card project1" data-aos="fade-right">
+        <h3><i class="fas fa-microphone"></i> AI Voice Assistant</h3>
+        <p>Python-based assistant with speech recognition, Wikipedia search, and YouTube integration.</p>
+      </div>
+      <div class="card project2" data-aos="zoom-in">
+        <h3><i class="fas fa-exchange-alt"></i> Number Converter</h3>
+        <p>Convert numbers between Binary, Decimal, and Hex formats using C++ CLI tool.</p>
+      </div>
+      <div class="card project3" data-aos="fade-left">
+        <h3><i class="fas fa-laptop-code"></i> Portfolio Website</h3>
+        <p>Responsive personal portfolio using HTML, CSS & JS, hosted on GitHub Pages.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <div class="projects">
+      <div class="card project1" data-aos="flip-left">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>sandeepmanchinasetti007@gmail.com</p>
+      </div>
+      <div class="card project2" data-aos="flip-up">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+91 7093094306</p>
+      </div>
+      <div class="card project3" data-aos="flip-right">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Kakinada, India</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const toggleBtn = document.querySelector(".dark-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = toggleBtn.querySelector("i");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    });
+  </script>
+</body>
+</html>
