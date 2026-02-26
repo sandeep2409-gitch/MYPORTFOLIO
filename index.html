@@ -1,231 +1,699 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandeep | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Manchinasetti | Full Stack Developer & AI/ML Engineer</title>
+    <meta name="description"
+        content="Portfolio of Sandeep Manchinasetti - Full Stack Developer and AI/ML Engineer. Explore my projects, skills, and get in touch.">
+    <meta name="keywords"
+        content="Sandeep Manchinasetti, Full Stack Developer, AI, ML, Portfolio, Web Developer, Python, React, Node.js">
+    <meta name="author" content="Sandeep Manchinasetti">
 
-  
-  <meta name="description" content="Portfolio of Sandeep Manchinasetti - Python, C++, Java, Machine Learning, Web Development">
-  <meta name="keywords" content="Sandeep, Portfolio, Python, C++, Java, Machine Learning, GitHub">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-  <style>
-    body {
-      font-family:'Times New Roman', Times, serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      transition: all 0.6s ease;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc, #6a11cb);
-      color: white;
-      position: relative;
-      transition: all 0.6s ease;
-    }
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid white;
-      margin-bottom: 15px;
-      transition: transform 0.4s ease;
-      animation: pulse 2s infinite;
-    }
-    header img:hover { transform: scale(1.1) rotate(5deg); }
-    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    header h1 { margin: 10px 0; font-size: 2.5em; }
-    header p { font-size: 1.2em; opacity: 0.9; }
-
-    .section { padding: 50px 20px; max-width: 1000px; margin: auto; transition: all 0.6s ease; }
-    .section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2em;
-      color: #2575fc;
-      position: relative;
-      transition: all 0.6s ease;
-    }
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: #2575fc;
-      margin: 10px auto 0;
-      border-radius: 2px;
-      transition: width 0.5s;
-    }
-    .section h2:hover::after { width: 100px; }
-
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-   
-    .skills {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.6s ease;
-      cursor: pointer;
-      text-align: center;
-    }
-    .card:hover {
-      transform: scale(1.08) rotate3d(1,1,0,8deg) translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-      color: white;
-    }
-    .card i {
-      font-size: 1.5em;
-      margin-right: 10px;
-      transition: transform 0.3s;
-    }
-    .card:hover i { transform: translateY(-5px) scale(1.2); color: #ffd700; }
-
-    
-    .python:hover { background: #306998; }
-    .cpp:hover { background: #00599C; }
-    .java:hover { background: #E76F00; }
-    .ml:hover { background: #27ae60; }
-    .htmlcss:hover { background: #e44d26; }
-    .git:hover { background: #24292e; }
-    .project1:hover { background: #6a1b9a; }
-    .project2:hover { background: #d32f2f; }
-    .project3:hover { background: #1976d2; }
-    .project4:hover { background: #388e3c; }
-
-    .contact-cards .card { text-align: center; padding: 30px; }
-    .contact-cards i {
-      font-size: 2em;
-      margin-bottom: 10px;
-      transition: transform 0.4s, color 0.4s;
-    }
-    .contact-cards .card:hover i { transform: translateY(-5px) scale(1.3); color: #00c6ff; }
-    
-    .socials { margin-top: 15px; }
-    .socials a { margin: 0 10px; font-size: 1.5em; color: white; transition: all 0.4s ease; }
-    .socials a:hover { color: #ffd700; }
-
-    .dark-mode { background: #121212; color: #eee; }
-    .dark-mode header { background: linear-gradient(135deg, #222, #333); }
-    .dark-mode .card { background: #1e1e1e; color: #eee; box-shadow: 0 4px 12px rgba(255,255,255,0.1); }
-    .dark-mode .card:hover { box-shadow: 0 8px 16px rgba(255,255,255,0.2); }
-    .dark-mode .section h2 { color: #ffd700; }
-
-    .dark-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 1.2em;
-      transition: all 0.4s ease;
-    }
-    .dark-toggle:hover { background: #ddd; }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.8em; }
-      .card { padding: 15px; font-size: 0.9em; }
-      .skills { grid-template-columns: 1fr; }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
 
-  <header data-aos="fade-down">
-    <button class="dark-toggle"><i class="fas fa-moon"></i></button>
-    <img src="sandeeppic.jpeg" alt="Sandeep Photo" loading="lazy" data-aos="zoom-in">
-    <h1 data-aos="fade-up">Sandeep Manchinasetti</h1>
-    <div class="socials" data-aos="fade-up" data-aos-delay="200">
-      <a href="https://wa.me/917093094306" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://github.com/sandeep2409-gitch" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.instagram.com/lovly_pandu07/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-text">
+                <span>S</span><span>A</span><span>N</span><span>D</span><span>E</span><span>E</span><span>P</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <div class="section">
-    <h2 data-aos="fade-right">Skills</h2>
-    <div class="skills">
-      <div class="card python" data-aos="fade-up"><i class="fab fa-python"></i> Python</div>
-      <div class="card cpp" data-aos="fade-up"><i class="fas fa-code"></i> C++</div>
-      <div class="card java" data-aos="fade-up"><i class="fab fa-java"></i> Java</div>
-      <div class="card ml" data-aos="fade-up"><i class="fas fa-robot"></i> Machine Learning</div>
-      <div class="card htmlcss" data-aos="fade-up"><i class="fab fa-html5"></i> HTML & CSS</div>
-      <div class="card git" data-aos="fade-up"><i class="fab fa-github"></i> Git & GitHub</div>
-    </div>
-  </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-  <div class="section">
-    <h2 data-aos="fade-left">Projects</h2>
-    <div class="projects">
-      <div class="card project1" data-aos="fade-right">
-        <h3><i class="fas fa-microphone"></i> AI Voice Assistant</h3>
-        <p>Python-based assistant with speech recognition, Wikipedia search, and YouTube integration.</p>
-      </div>
-      <div class="card project2" data-aos="zoom-in">
-        <h3><i class="fas fa-exchange-alt"></i> Number Converter</h3>
-        <p>Convert numbers between Binary, Decimal, and Hex formats using C++ CLI tool.</p>
-      </div>
-      <div class="card project3" data-aos="fade-left">
-        <h3><i class="fas fa-laptop-code"></i> Portfolio Website</h3>
-        <p>Responsive personal portfolio using HTML, CSS & JS, hosted on GitHub Pages.</p>
-      </div>
-    </div>
-  </div>
+    <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <h1 class="hero-title reveal-up">
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-name">
+                    <span class="name-text" id="heroName">Sandeep Manchinasetti</span>
+                    <span class="name-underline"></span>
+                </span>
+            </h1>
+            <div class="hero-typewriter reveal-up">
+                <span class="typewriter-prefix">I'm a </span>
+                <span class="typewriter-text" id="typewriter"></span>
+                <span class="typewriter-cursor">|</span>
+            </div>
+            <p class="hero-description reveal-up">
+                Crafting digital experiences with code & intelligence.
+                Building the future, one project at a time.
+            </p>
+            <div class="hero-cta reveal-up">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Get in Touch</span>
+                    <i data-lucide="send"></i>
+                </a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="stat">
+                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years Learning</span>
+                </div>
+            </div>
+        </div>
 
-  
-  <div class="section">
-    <h2 data-aos="fade-up">Contact Me</h2>
-    <div class="projects">
-      <div class="card project1" data-aos="flip-left">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>sandeepmanchinasetti007@gmail.com</p>
-      </div>
-      <div class="card project2" data-aos="flip-up">
-        <i class="fas fa-phone"></i>
-        <h3>Phone</h3>
-        <p>+91 7093094306</p>
-      </div>
-      <div class="card project3" data-aos="flip-right">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Location</h3>
-        <p>Kakinada, India</p>
-      </div>
-    </div>
-  </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </section>
 
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal-left">
+                    <div class="about-image-container">
+                        <div class="about-image-glow"></div>
+                        <img src="sandeeppic.jpg" alt="Sandeep Manchinasetti" class="about-image">
+                        <div class="about-image-border"></div>
+                        <div class="about-image-dots"></div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="exp-number">B.Tech</span>
+                        <span class="exp-text"></span>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h3 class="about-subtitle">A passionate <span class="gradient-text">Tech Enthusiast</span></h3>
+                    <p class="about-text">
+                        I am a techie who loves to learn about new things. Currently pursuing my B.Tech 2nd year,
+                        I'm deeply passionate about building innovative solutions that merge full-stack development
+                        with the power of Artificial Intelligence and Machine Learning.
+                    </p>
+                    <p class="about-text">
+                        From building intelligent campus management systems to creating ML-powered phishing
+                        detectors, I thrive on solving real-world problems with code. My curiosity drives me
+                        to constantly explore emerging technologies and push the boundaries of what's possible.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <i data-lucide="user"></i>
+                            <div>
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Sandeep Manchinasetti</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">sandeepmanchinasetti007@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="graduation-cap"></i>
+                            <div>
+                                <span class="info-label">Education</span>
+                                <span class="info-value">B.Tech</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <span class="info-label">Based in</span>
+                                <span class="info-value">India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="mailto:sandeepmanchinasetti007@gmail.com" class="btn btn-primary">
+                        <span>Let's Talk</span>
+                        <i data-lucide="message-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal-up" style="--delay: 0.1s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #3776AB">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#FFD845"
+                                    d="M49.33 62h29.159C86.606 62 93 55.132 93 46.981V19.183c0-7.912-6.632-13.856-14.555-15.176-5.014-.835-10.195-1.215-15.187-1.191-4.99.023-9.612.448-13.805 1.191C37.098 6.188 35 10.758 35 19.183V30h29v4H23.776c-8.484 0-15.914 5.108-18.237 14.811-2.681 11.12-2.8 18.062 0 29.674C7.473 86.746 12.321 93 20.776 93H31V79.952c0-9.66 8.35-18.168 18.33-17.952z" />
+                                <path fill="#3776AB"
+                                    d="M91.682 28H63V24H35.145c-8.636 0-14.852 9.218-14.852 18.186v27.8c0 7.907 6.853 12.39 14.556 14.555 9.22 2.59 18.048 3.065 29.074 0C71.417 82.609 79 79.062 79 84.541V93H49.629C41.345 93 35 86.375 35 78.818v-8H93V46.981C93 38.724 86.375 28 91.682 28zM50.466 72.459c-3.563 0-6.476-2.977-6.476-6.635s2.913-6.67 6.476-6.67c3.548 0 6.476 3.012 6.476 6.67s-2.928 6.635-6.476 6.635z" />
+                                <path fill="#FFD845"
+                                    d="M77.478 38.296c0 3.658-2.913 6.635-6.476 6.635-3.563 0-6.476-2.977-6.476-6.635s2.913-6.67 6.476-6.67c3.563 0 6.476 3.012 6.476 6.67z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="90"></div>
+                    </div>
+                    <span class="skill-level">Advanced</span>
+                </div>
 
-    const toggleBtn = document.querySelector(".dark-toggle");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const icon = toggleBtn.querySelector("i");
-      icon.classList.toggle("fa-moon");
-      icon.classList.toggle("fa-sun");
-    });
-  </script>
+                <div class="skill-card reveal-up" style="--delay: 0.2s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #68A063">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#68A063"
+                                    d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623c-.712 0-2.306 1.061-2.306 1.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 91.2c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.29 9.29 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.71 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645 1.06 1.272 1.06h5.731c.355 0 .725-.258.961-.517.236-.26.383-.601.344-.971-.558-8.793-7.571-13.593-22.15-13.593-12.665 0-20.207 5.334-20.207 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">Node.js</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85"></div>
+                    </div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+
+                <div class="skill-card reveal-up" style="--delay: 0.3s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #61DAFB">
+                            <svg viewBox="0 0 128 128">
+                                <circle cx="64" cy="64" r="11.4" fill="#61DAFB" />
+                                <path fill="#61DAFB"
+                                    d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.7-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22 10 22 15.6 0 4.7-5.8 9.7-15.6 13.4z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="80"></div>
+                    </div>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+
+                <div class="skill-card reveal-up" style="--delay: 0.4s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #E34F26">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#E44D26"
+                                    d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z" />
+                                <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z" />
+                                <path fill="#EBEBEB"
+                                    d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z" />
+                                <path fill="#fff"
+                                    d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="95"></div>
+                    </div>
+                    <span class="skill-level">Expert</span>
+                </div>
+
+                <div class="skill-card reveal-up" style="--delay: 0.5s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #1572B6">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#1572B6"
+                                    d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                                <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                                <path fill="#fff"
+                                    d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                                <path fill="#EBEBEB"
+                                    d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                                <path fill="#fff"
+                                    d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                                <path fill="#EBEBEB"
+                                    d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.994v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="90"></div>
+                    </div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+
+                <div class="skill-card reveal-up" style="--delay: 0.6s">
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon" style="--accent: #F7DF1E">
+                            <svg viewBox="0 0 128 128">
+                                <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z" />
+                                <path fill="#323330"
+                                    d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.478-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.271.332 12.02-.71 13.766-1.715 3.536-6.111 3.111-8.123 2.440-2.047-1.047-3.089-2.677-4.260-4.843-0.327-.538-.578-1.054-.682-1.054L35.140 104.58c1.143 3.499 2.913 6.497 5.404 8.567 3.698 3.059 8.642 3.975 13.822 3.271 7.095-1.308 12.42-5.355 14.256-12.865.731-2.976.548-15.744.587-24.313.012-6.817.007-13.639.007-20.426l.248.129z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85"></div>
+                    </div>
+                    <span class="skill-level">Advanced</span>
+                </div>
+            </div>
+
+            <div class="skills-extras reveal-up">
+                <h3 class="extras-title">Also familiar with</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">MediaPipe</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Vite</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">VS Code</span>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/skills&gt;</span>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal-up" style="--delay: 0.1s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="building-2"></i>
+                            </div>
+                            <div class="project-number">01</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Campus Management System</h3>
+                            <p class="project-description">
+                                A comprehensive platform for managing campus operations including attendance tracking,
+                                student management, feedback systems, and timetable management with role-based access
+                                control.
+                            </p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>JWT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" style="--delay: 0.2s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="shield-alert"></i>
+                            </div>
+                            <div class="project-number">02</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Phishing Site Detector</h3>
+                            <p class="project-description">
+                                A machine learning-powered system that identifies and flags phishing websites
+                                by analyzing URL patterns, page content, and security certificates to protect users from
+                                cyber threats.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Scikit-learn</span>
+                                <span>ML</span>
+                                <span>NLP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" style="--delay: 0.3s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="scan-face"></i>
+                            </div>
+                            <div class="project-number">03</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Face Recognition Attendance</h3>
+                            <p class="project-description">
+                                An intelligent attendance system using facial recognition with real-time face detection,
+                                GPS verification, and QR code authentication for secure and automated attendance
+                                tracking.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>OpenCV</span>
+                                <span>Deep Learning</span>
+                                <span>Flask</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" style="--delay: 0.4s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="hand"></i>
+                            </div>
+                            <div class="project-number">04</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Sign to Text Conversion</h3>
+                            <p class="project-description">
+                                A machine learning system that converts sign language gestures to text in real-time,
+                                bridging communication gaps and enabling accessibility for hearing-impaired individuals.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>MediaPipe</span>
+                                <span>CNN</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" style="--delay: 0.5s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <div class="project-number">05</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Brain Tumor Prediction</h3>
+                            <p class="project-description">
+                                An AI-powered medical imaging model that analyzes brain MRI scans to detect and classify
+                                tumors with high accuracy, assisting medical professionals in early diagnosis.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>CNN</span>
+                                <span>Keras</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" style="--delay: 0.6s">
+                    <div class="project-card-inner">
+                        <div class="project-header"
+                            style="--gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
+                            <div class="project-icon">
+                                <i data-lucide="map"></i>
+                            </div>
+                            <div class="project-number">06</div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Village Explorer</h3>
+                            <p class="project-description">
+                                An interactive platform for exploring villages, showcasing local culture, geography,
+                                and resources. Features maps, media galleries, and community information systems.
+                            </p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>APIs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-lucide="external-link"></i>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/projects&gt;</span>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Interested in working together? Drop your details and I'll get back to you!
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3 class="contact-heading">Let's connect</h3>
+                    <p class="contact-text">
+                        Fill in the form with your details and message &mdash; I'll review it and
+                        get back to you as soon as possible. Looking forward to hearing from you!
+                    </p>
+                    <div class="contact-details">
+                        <a href="mailto:sandeepmanchinasetti007@gmail.com" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <span class="contact-item-label">Email</span>
+                                <span class="contact-item-value">sandeepmanchinasetti007@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i data-lucide="github"></i>
+                            </div>
+                            <div>
+                                <span class="contact-item-label">GitHub</span>
+                                <span class="contact-item-value">sandeep2409-gitch</span>
+                            </div>
+                        </a>
+                        <a href="#" class="contact-item">
+                            <div class="contact-item-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <span class="contact-item-label">Location</span>
+                                <span class="contact-item-value">India</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contact-code">
+                        <div class="code-header">
+                            <span class="code-dot" style="background: #ff5f57"></span>
+                            <span class="code-dot" style="background: #febc2e"></span>
+                            <span class="code-dot" style="background: #28c840"></span>
+                            <span class="code-title">contact.js</span>
+                        </div>
+                        <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">sandeep</span> = {
+  <span class="code-prop">email</span>: <span class="code-string">"sandeepmanchinasetti007@gmail.com"</span>,
+  <span class="code-prop">passion</span>: <span class="code-string">"Building cool stuff"</span>,
+  <span class="code-prop">openTo</span>: [
+    <span class="code-string">"Collaborations"</span>,
+    <span class="code-string">"Freelance"</span>,
+    <span class="code-string">"Full-time"</span>
+  ],
+  <span class="code-func">hireable</span>: () => <span class="code-bool">true</span>
+};</code></pre>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form" id="contactForm"
+                        action="https://formsubmit.co/sandeepmanchinasetti007@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="">
+                        <input type="text" name="_honey" style="display:none">
+                        <div class="form-group">
+                            <input type="text" name="name" id="contactName" class="form-input" placeholder=" " required>
+                            <label for="contactName" class="form-label">Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="contactEmail" class="form-input" placeholder=" "
+                                required>
+                            <label for="contactEmail" class="form-label">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="contactSubject" class="form-input" placeholder=" ">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="contactMessage" class="form-input form-textarea"
+                                placeholder=" " required rows="5"></textarea>
+                            <label for="contactMessage" class="form-label">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i data-lucide="send"></i>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+            <span class="section-tag section-tag-close reveal-up">&lt;/contact&gt;</span>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
+                </div>
+                <p class="footer-text">Designed & Built by Sandeep Manchinasetti</p>
+                <div class="footer-socials">
+                    <a href="mailto:sandeepmanchinasetti007@gmail.com" class="footer-social" aria-label="Email">
+                        <i data-lucide="mail"></i>
+                    </a>
+                    <a href="https://github.com/sandeep2409-gitch" target="_blank" class="footer-social"
+                        aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                </div>
+                <p class="footer-copyright">&copy; 2026 Sandeep Manchinasetti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
