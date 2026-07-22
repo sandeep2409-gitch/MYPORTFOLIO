@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sandeep2409-gitch.github.io/MYPORTFOLIO/sitemap.xml
