@@ -4,184 +4,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Manchinasetti | Full Stack Developer & AI/ML Engineer</title>
+    <title>Sandeep Manchinasetti | AI Engineer & Full Stack Developer</title>
     <meta name="description"
-        content="Portfolio of Sandeep Manchinasetti - Full Stack Developer and AI/ML Engineer. Explore my projects, skills, and get in touch.">
+        content="Awwwards-inspired futuristic 3D portfolio of Sandeep Manchinasetti. AI Security Engineer, Full Stack Developer, and Machine Learning Enthusiast.">
     <meta name="keywords"
-        content="Sandeep Manchinasetti, Full Stack Developer, AI, ML, Portfolio, Web Developer, Python, React, Node.js">
+        content="Sandeep Manchinasetti, AI Engineer, Full Stack Developer, Machine Learning, Three.js, React, Python, Cybersecurity, Portfolio">
     <meta name="author" content="Sandeep Manchinasetti">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    
+    <div class="noise-overlay"></div>
+
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
 
     <div class="loader" id="loader">
         <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
+            </div>
             <div class="loader-text">
                 <span>S</span><span>A</span><span>N</span><span>D</span><span>E</span><span>E</span><span>P</span>
             </div>
+
             <div class="loader-bar">
                 <div class="loader-bar-fill"></div>
             </div>
         </div>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
+    <div class="toast" id="toast">
+        <i data-lucide="check-circle" class="toast-icon"></i>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <aside class="floating-social-bar">
+        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="social-link" title="GitHub">
+            <i data-lucide="github"></i>
+            <span class="social-tooltip">GitHub</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+            <i data-lucide="linkedin"></i>
+            <span class="social-tooltip">LinkedIn</span>
+        </a>
+        <a href="https://x.com/lovly_pandu07" target="_blank" class="social-link" title="Twitter / X (@lovly_pandu07)">
+            <i data-lucide="twitter"></i>
+            <span class="social-tooltip">Twitter / X</span>
+        </a>
+        <a href="https://instagram.com/sandeep_manchinasettii007" target="_blank" class="social-link"
+            title="Instagram (@sandeep_manchinasettii007)">
+            <i data-lucide="instagram"></i>
+            <span class="social-tooltip">Instagram</span>
+        </a>
+        <div class="social-line"></div>
+    </aside>
+
+    <div class="cmd-palette-backdrop" id="cmdBackdrop">
+        <div class="cmd-palette">
+            <div class="cmd-input-wrapper">
+                <i data-lucide="search" class="cmd-search-icon"></i>
+                <input type="text" id="cmdInput"
+                    placeholder="Type a command or section... (e.g. Projects, Experience, Skills, Email)"
+                    autocomplete="off">
+                <span class="cmd-badge">ESC</span>
+            </div>
+            <div class="cmd-results" id="cmdResults">
+                <div class="cmd-group-title">Navigation</div>
+                <div class="cmd-item" data-action="nav" data-target="hero"><i data-lucide="home"></i> <span>Home /
+                        Hero</span> <kbd>Jump</kbd></div>
+                <div class="cmd-item" data-action="nav" data-target="about"><i data-lucide="user"></i> <span>About
+                        Me</span> <kbd>Jump</kbd></div>
+                <div class="cmd-item" data-action="nav" data-target="skills"><i data-lucide="code-2"></i> <span>Skills &
+                        Stack</span> <kbd>Jump</kbd></div>
+                <div class="cmd-item" data-action="nav" data-target="projects"><i data-lucide="folder-git-2"></i>
+                    <span>Featured Projects</span> <kbd>Jump</kbd>
+                </div>
+                <div class="cmd-item" data-action="nav" data-target="experience"><i data-lucide="briefcase"></i>
+                    <span>Experience Timeline</span> <kbd>Jump</kbd>
+                </div>
+                <div class="cmd-item" data-action="nav" data-target="hackathons"><i data-lucide="trophy"></i>
+                    <span>Hackathons</span> <kbd>Jump</kbd>
+                </div>
+                <div class="cmd-item" data-action="nav" data-target="achievements"><i data-lucide="award"></i>
+                    <span>Achievements</span> <kbd>Jump</kbd>
+                </div>
+                <div class="cmd-item" data-action="nav" data-target="contact"><i data-lucide="mail"></i>
+                    <span>Contact</span> <kbd>Jump</kbd>
+                </div>
+                <div class="cmd-group-title">Actions</div>
+                <div class="cmd-item" data-action="copy-email"><i data-lucide="copy"></i> <span>Copy Email
+                        Address</span> <kbd>Action</kbd></div>
+                <div class="cmd-item" data-action="github"><i data-lucide="github"></i> <span>Open GitHub Profile</span>
+                    <kbd>External</kbd>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="dynamic-island-wrapper" id="navbar">
+        <div class="dynamic-island" id="dynamicIsland">
+            <a href="#hero" class="nav-logo" aria-label="Home">
+                <span class="island-status-dot"></span>
                 <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+
+            <nav class="nav-menu">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="mailto:sandeepmanchinasetti007@gmail.com" class="nav-email-pill" id="navEmailPill"
+                    title="Click to copy email">
+                    <i data-lucide="mail"></i>
+                </a>
+                <button class="cmd-trigger-btn" id="cmdTriggerBtn" title="Search commands (⌘K / Ctrl+K)">
+                    <i data-lucide="command"></i>
+                    <span class="cmd-key-hint">⌘K</span>
+                </button>
+                <a href="mailto:sandeepmanchinasetti007@gmail.com" target="_blank"
+                    class="btn btn-sm btn-outline nav-resume-btn">
+                    <span>Resume</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <section class="hero" id="hero">
-        <canvas id="particleCanvas"></canvas>
-        <div class="hero-content">
-            <div class="hero-badge reveal-up">
-                <span class="badge-dot"></span>
-                Available for opportunities
-            </div>
-            <h1 class="hero-title reveal-up">
-                <span class="hero-greeting">Hello, I'm</span>
-                <span class="hero-name">
-                    <span class="name-text" id="heroName">Sandeep Manchinasetti</span>
-                    <span class="name-underline"></span>
-                </span>
-            </h1>
-            <div class="hero-typewriter reveal-up">
-                <span class="typewriter-prefix">I'm a </span>
-                <span class="typewriter-text" id="typewriter"></span>
-                <span class="typewriter-cursor">|</span>
-            </div>
-            <p class="hero-description reveal-up">
-                Crafting digital experiences with code & intelligence.
-                Building the future, one project at a time.
-            </p>
-            <div class="hero-cta reveal-up">
-                <a href="#projects" class="btn btn-primary">
-                    <span>View My Work</span>
-                    <i data-lucide="arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn btn-outline">
-                    <span>Get in Touch</span>
-                    <i data-lucide="send"></i>
-                </a>
-            </div>
-            <div class="hero-stats reveal-up">
-                <div class="stat">
-                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Projects</span>
+        
+        <canvas id="webglCanvas"></canvas>
+
+        <div class="purple-glow-center"></div>
+        <div class="purple-glow-bottom"></div>
+
+        <div class="container hero-layout">
+            
+            <div class="hero-left">
+                <span class="hero-subhead gs-fade-up">Hello! I'm</span>
+                <h1 class="hero-name-large gs-fade-up">SANDEEP</h1>
+                <div class="hero-role-rotator gs-fade-up">
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Technologies</span>
+                <p class="hero-bio-short gs-fade-up">
+                    Crafting intelligent systems at the intersection of Artificial Intelligence, Cybersecurity, and
+                    Full-Stack Engineering.
+                </p>
+                <div class="hero-cta-group gs-fade-up">
+                    <a href="#projects" class="btn btn-primary btn-glow">
+                        <span>View Featured Work</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get in Touch</span>
+                    </a>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Years Learning</span>
+            </div>
+
+            <div class="hero-right">
+                <span class="hero-taghead gs-fade-up">A Creative</span>
+                <h2 class="hero-large-gradient gs-fade-up">
+                    AI ENGINEER<br>
+                    <span>&amp; DEVELOPER</span>
+                </h2>
+                <div class="hero-badge-pill gs-fade-up">
+                    <span class="pulse-dot"></span>
+                    <span>Building the Future with Code</span>
                 </div>
             </div>
         </div>
 
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
+        <div class="bottom-right-resume">
+            <a href="mailto:sandeepmanchinasetti007@gmail.com" class="btn-minimal-resume">
+                <span>RESUME</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="container">
             <div class="section-header reveal-up">
+                <span class="section-tag">&lt;about-me&gt;</span>
                 <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-                <div class="section-line"></div>
+                <p class="section-subtitle">A glimpse into my background, academic journey, and engineering mindset.</p>
             </div>
-            <div class="about-grid">
-                <div class="about-image-wrapper reveal-left">
-                    <div class="about-image-container">
-                        <div class="about-image-glow"></div>
-                        <img src="sandeep.jpg" alt="Sandeep Manchinasetti" class="about-image">
-                        <div class="about-image-border"></div>
-                        <div class="about-image-dots"></div>
-                    </div>
-                    <div class="about-experience-badge">
-                        <span class="exp-number">B.Tech</span>
-                        <span class="exp-text"></span>
+
+            <div class="bento-grid">
+                
+                <div class="bento-card bento-profile reveal-up">
+                    <div class="bento-profile-wrapper">
+                        <div class="profile-image-container" id="pfpContainer">
+                            <div class="profile-avatar-ring"></div>
+                            <div class="cyber-developer-boy" id="cyberAvatar">
+                                <svg viewBox="0 0 100 100" class="boy-avatar-svg" id="boySvg">
+                                    
+                                    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(168, 85, 247, 0.4)"
+                                        stroke-width="1.5" stroke-dasharray="4 2" />
+
+                                    <g id="boyHeadGroup">
+                                        
+                                        <path d="M40 76 L50 82 L60 76 L60 70 L40 70 Z" fill="#181424" stroke="#a855f7"
+                                            stroke-width="1" />
+                                        <path d="M22 88 Q50 70 78 88 Z" fill="#9333ea" />
+
+                                        <ellipse cx="50" cy="50" rx="21" ry="23" fill="#f8d0c3" />
+
+                                        <path d="M26 46 Q28 22 50 22 Q72 22 74 46 Q64 32 50 34 Q36 32 26 46 Z"
+                                            fill="#1b172c" />
+                                        <path d="M30 30 Q42 20 56 28 Q45 26 35 32 Z" fill="#a855f7" />
+
+                                        <rect x="29" y="42" width="42" height="16" rx="5" fill="#0d0d14"
+                                            stroke="#a855f7" stroke-width="1.5" />
+
+                                        <g id="boyEyes">
+                                            <circle id="leftPupil" cx="40" cy="50" r="3.5" fill="#00f2fe" />
+                                            <circle id="rightPupil" cx="60" cy="50" r="3.5" fill="#00f2fe" />
+                                            <circle id="leftReflect" cx="41" cy="49" r="1.2" fill="#ffffff" />
+                                            <circle id="rightReflect" cx="61" cy="49" r="1.2" fill="#ffffff" />
+                                        </g>
+
+                                        <path d="M24 43 C24 26 76 26 76 43" fill="none" stroke="#c084fc"
+                                            stroke-width="2.5" />
+                                        <rect x="21" y="42" width="6" height="12" rx="3" fill="#a855f7" />
+                                        <rect x="73" y="42" width="6" height="12" rx="3" fill="#a855f7" />
+
+                                        <path d="M44 63 Q50 67 56 63" fill="none" stroke="#1e1b2e" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="reactive-emoji-badge" id="reactiveEmoji"
+                                title="Cursor Reactive Emoji! Click to toggle emoji">⚡</div>
+                            <span class="status-badge" title="Online & Building"></span>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-tag">AI Security Engineer & Full Stack Dev</div>
+                            <h3 class="profile-name">Sandeep Manchinasetti</h3>
+                            <p class="profile-bio">
+                                B.Tech 3rd Year Computer Science student deeply passionate about engineering robust web
+                                systems, Machine Learning algorithms, Computer Vision pipelines, and security research.
+                            </p>
+                            <div class="profile-meta">
+                                <div class="meta-item"><i data-lucide="map-pin"></i> India</div>
+                                <div class="meta-item"><i data-lucide="graduation-cap"></i> B.Tech 3rd Year</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-content reveal-right">
-                    <h3 class="about-subtitle">A passionate <span class="gradient-text">Tech Enthusiast</span></h3>
-                    <p class="about-text">
-                        I am a techie who loves to learn about new things. Currently pursuing my B.Tech 2nd year,
-                        I'm deeply passionate about building innovative solutions that merge full-stack development
-                        with the power of Artificial Intelligence and Machine Learning.
-                    </p>
-                    <p class="about-text">
-                        From building intelligent campus management systems to creating ML-powered phishing
-                        detectors, I thrive on solving real-world problems with code. My curiosity drives me
-                        to constantly explore emerging technologies and push the boundaries of what's possible.
-                    </p>
-                    <div class="about-info-grid">
-                        <div class="info-item">
-                            <i data-lucide="user"></i>
-                            <div>
-                                <span class="info-label">Name</span>
-                                <span class="info-value">Sandeep Manchinasetti</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="mail"></i>
-                            <div>
-                                <span class="info-label">Email</span>
-                                <span class="info-value">sandeepmanchinasetti007@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="graduation-cap"></i>
-                            <div>
-                                <span class="info-label">Education</span>
-                                <span class="info-value">B.Tech</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="map-pin"></i>
-                            <div>
-                                <span class="info-label">Based in</span>
-                                <span class="info-value">India</span>
-                            </div>
+
+                <div class="bento-card bento-education reveal-up">
+                    <div class="bento-header">
+                        <div class="bento-icon"><i data-lucide="graduation-cap"></i></div>
+                        <span class="bento-label">Education</span>
+                    </div>
+                    <h4 class="bento-title">Bachelor of Technology</h4>
+                    <p class="bento-desc">Focused on Computer Science, AI, Web Systems, Data Structures, and Algorithmic
+                        Optimization.</p>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-content">
+                            <strong>B.Tech (Undergrad)</strong>
+                            <span>3rd Year Active Student</span>
                         </div>
                     </div>
-                    <a href="mailto:sandeepmanchinasetti007@gmail.com" class="btn btn-primary">
-                        <span>Let's Talk</span>
-                        <i data-lucide="message-circle"></i>
-                    </a>
+                </div>
+
+                <div class="bento-card bento-focus reveal-up">
+                    <div class="bento-header">
+                        <div class="bento-icon"><i data-lucide="sparkles"></i></div>
+                        <span class="bento-label">Core Philosophy</span>
+                    </div>
+                    <h4 class="bento-title">Synergy of AI & Web Tech</h4>
+                    <p class="bento-desc">Creating scalable, beautiful web platforms powered by behind-the-scenes neural
+                        networks, computer vision, and machine learning models.</p>
+                    <div class="focus-pills">
+                        <span class="pill"><i data-lucide="shield-check"></i> Cyber Security</span>
+                        <span class="pill"><i data-lucide="brain"></i> Deep Learning</span>
+                        <span class="pill"><i data-lucide="eye"></i> Computer Vision</span>
+                        <span class="pill"><i data-lucide="layout"></i> Responsive UI</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-code reveal-up">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">sandeep_config.ts</span>
+                    </div>
+                    <pre class="terminal-body"><code><span class="token-keyword">export const</span> <span class="token-class">engineer</span> = {
+  name: <span class="token-string">"Sandeep Manchinasetti"</span>,
+  year: <span class="token-string">"B.Tech 3rd Year"</span>,
+  focus: [<span class="token-string">"AI"</span>, <span class="token-string">"Cyber Security"</span>, <span class="token-string">"Full Stack"</span>],
+  passion: () => <span class="token-string">"Building award-winning digital experiences"</span>
+};</code></pre>
                 </div>
             </div>
         </div>
@@ -190,154 +339,129 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header reveal-up">
-                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
-                <div class="section-line"></div>
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+                <p class="section-subtitle">Technologies, frameworks, and AI tools I work with daily.</p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card reveal-up" style="--delay: 0.1s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #3776AB">
-                            <svg viewBox="0 0 128 128">
-                                <path fill="#FFD845"
-                                    d="M49.33 62h29.159C86.606 62 93 55.132 93 46.981V19.183c0-7.912-6.632-13.856-14.555-15.176-5.014-.835-10.195-1.215-15.187-1.191-4.99.023-9.612.448-13.805 1.191C37.098 6.188 35 10.758 35 19.183V30h29v4H23.776c-8.484 0-15.914 5.108-18.237 14.811-2.681 11.12-2.8 18.062 0 29.674C7.473 86.746 12.321 93 20.776 93H31V79.952c0-9.66 8.35-18.168 18.33-17.952z" />
-                                <path fill="#3776AB"
-                                    d="M91.682 28H63V24H35.145c-8.636 0-14.852 9.218-14.852 18.186v27.8c0 7.907 6.853 12.39 14.556 14.555 9.22 2.59 18.048 3.065 29.074 0C71.417 82.609 79 79.062 79 84.541V93H49.629C41.345 93 35 86.375 35 78.818v-8H93V46.981C93 38.724 86.375 28 91.682 28zM50.466 72.459c-3.563 0-6.476-2.977-6.476-6.635s2.913-6.67 6.476-6.67c3.548 0 6.476 3.012 6.476 6.67s-2.928 6.635-6.476 6.635z" />
-                                <path fill="#FFD845"
-                                    d="M77.478 38.296c0 3.658-2.913 6.635-6.476 6.635-3.563 0-6.476-2.977-6.476-6.635s2.913-6.67 6.476-6.67c3.563 0 6.476 3.012 6.476 6.67z" />
-                            </svg>
+
+            <div class="filter-tabs reveal-up">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="languages">Languages & Core</button>
+                <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+                <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
+            </div>
+
+            <div class="skills-grid" id="skillsGrid">
+                
+                <div class="skill-card reveal-up" data-category="languages ai">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #a855f7">
+                            <i data-lucide="terminal"></i>
                         </div>
+                        <span class="skill-badge">Advanced</span>
                     </div>
                     <h3 class="skill-name">Python</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="90"></div>
+                    <p class="skill-desc">ML Pipelines, Scikit-learn, OpenCV, TensorFlow, Flask, Data Analysis.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="92%"></div>
                     </div>
-                    <span class="skill-level">Advanced</span>
                 </div>
 
-                <div class="skill-card reveal-up" style="--delay: 0.2s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #68A063">
-                            <svg viewBox="0 0 128 128">
-                                <path fill="#68A063"
-                                    d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623c-.712 0-2.306 1.061-2.306 1.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 91.2c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.29 9.29 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.71 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645 1.06 1.272 1.06h5.731c.355 0 .725-.258.961-.517.236-.26.383-.601.344-.971-.558-8.793-7.571-13.593-22.15-13.593-12.665 0-20.207 5.334-20.207 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z" />
-                            </svg>
+                <div class="skill-card reveal-up" data-category="web languages">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #c084fc">
+                            <i data-lucide="server"></i>
                         </div>
+                        <span class="skill-badge">Advanced</span>
                     </div>
-                    <h3 class="skill-name">Node.js</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="85"></div>
+                    <h3 class="skill-name">Node.js & Express</h3>
+                    <p class="skill-desc">REST API Architecture, JWT Auth, Middleware, MongoDB database schemas.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="86%"></div>
                     </div>
-                    <span class="skill-level">Advanced</span>
                 </div>
 
-                <div class="skill-card reveal-up" style="--delay: 0.3s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #61DAFB">
-                            <svg viewBox="0 0 128 128">
-                                <circle cx="64" cy="64" r="11.4" fill="#61DAFB" />
-                                <path fill="#61DAFB"
-                                    d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.7-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22 10 22 15.6 0 4.7-5.8 9.7-15.6 13.4z" />
-                            </svg>
+                <div class="skill-card reveal-up" data-category="web">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #61DAFB">
+                            <i data-lucide="layers"></i>
                         </div>
+                        <span class="skill-badge">Advanced</span>
                     </div>
-                    <h3 class="skill-name">React</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="80"></div>
+                    <h3 class="skill-name">React.js & Three.js</h3>
+                    <p class="skill-desc">Component-driven UI, WebGL 3D rendering, state management, modern single-page
+                        apps.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="84%"></div>
                     </div>
-                    <span class="skill-level">Intermediate</span>
                 </div>
 
-                <div class="skill-card reveal-up" style="--delay: 0.4s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #E34F26">
-                            <svg viewBox="0 0 128 128">
-                                <path fill="#E44D26"
-                                    d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z" />
-                                <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z" />
-                                <path fill="#EBEBEB"
-                                    d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z" />
-                                <path fill="#fff"
-                                    d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z" />
-                            </svg>
+                <div class="skill-card reveal-up" data-category="ai">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #ff2a85">
+                            <i data-lucide="brain"></i>
                         </div>
+                        <span class="skill-badge">Advanced</span>
                     </div>
-                    <h3 class="skill-name">HTML5</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="95"></div>
+                    <h3 class="skill-name">AI & Security Engineering</h3>
+                    <p class="skill-desc">Phishing detection algorithms, classification models, CNNs, threat analytics.
+                    </p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="88%"></div>
                     </div>
-                    <span class="skill-level">Expert</span>
                 </div>
 
-                <div class="skill-card reveal-up" style="--delay: 0.5s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #1572B6">
-                            <svg viewBox="0 0 128 128">
-                                <path fill="#1572B6"
-                                    d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
-                                <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
-                                <path fill="#fff"
-                                    d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
-                                <path fill="#EBEBEB"
-                                    d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
-                                <path fill="#fff"
-                                    d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
-                                <path fill="#EBEBEB"
-                                    d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.994v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
-                            </svg>
+                <div class="skill-card reveal-up" data-category="ai">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #00e5ff">
+                            <i data-lucide="scan-face"></i>
                         </div>
+                        <span class="skill-badge">Advanced</span>
                     </div>
-                    <h3 class="skill-name">CSS3</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="90"></div>
+                    <h3 class="skill-name">Computer Vision</h3>
+                    <p class="skill-desc">OpenCV image processing, facial recognition pipelines, MediaPipe gesture
+                        tracking.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="90%"></div>
                     </div>
-                    <span class="skill-level">Advanced</span>
                 </div>
 
-                <div class="skill-card reveal-up" style="--delay: 0.6s">
-                    <div class="skill-icon-wrapper">
-                        <div class="skill-icon" style="--accent: #F7DF1E">
-                            <svg viewBox="0 0 128 128">
-                                <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z" />
-                                <path fill="#323330"
-                                    d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.478-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.271.332 12.02-.71 13.766-1.715 3.536-6.111 3.111-8.123 2.440-2.047-1.047-3.089-2.677-4.260-4.843-0.327-.538-.578-1.054-.682-1.054L35.140 104.58c1.143 3.499 2.913 6.497 5.404 8.567 3.698 3.059 8.642 3.975 13.822 3.271 7.095-1.308 12.42-5.355 14.256-12.865.731-2.976.548-15.744.587-24.313.012-6.817.007-13.639.007-20.426l.248.129z" />
-                            </svg>
+                <div class="skill-card reveal-up" data-category="web languages">
+                    <div class="skill-top">
+                        <div class="skill-icon-box" style="--icon-accent: #e34f26">
+                            <i data-lucide="code-2"></i>
                         </div>
+                        <span class="skill-badge">Expert</span>
                     </div>
-                    <h3 class="skill-name">JavaScript</h3>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" data-width="85"></div>
+                    <h3 class="skill-name">HTML5 & CSS3</h3>
+                    <p class="skill-desc">Modern glassmorphism UI, CSS Grid, Flexbox, Animations, Responsive layouts.
+                    </p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="95%"></div>
                     </div>
-                    <span class="skill-level">Advanced</span>
                 </div>
             </div>
 
-            <div class="skills-extras reveal-up">
-                <h3 class="extras-title">Also familiar with</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Deep Learning</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Keras</span>
-                    <span class="skill-tag">OpenCV</span>
-                    <span class="skill-tag">MediaPipe</span>
-                    <span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">Express.js</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">Firebase</span>
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">REST APIs</span>
-                    <span class="skill-tag">Vite</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">VS Code</span>
+            <div class="skills-cloud-wrapper reveal-up">
+                <h3 class="cloud-title"><i data-lucide="cpu"></i> Technologies & Tools Cloud</h3>
+                <div class="cloud-tags">
+                    <span class="cloud-tag">Scikit-Learn</span>
+                    <span class="cloud-tag">MediaPipe</span>
+                    <span class="cloud-tag">TensorFlow</span>
+                    <span class="cloud-tag">Keras</span>
+                    <span class="cloud-tag">OpenCV</span>
+                    <span class="cloud-tag">NumPy</span>
+                    <span class="cloud-tag">Pandas</span>
+                    <span class="cloud-tag">Flask</span>
+                    <span class="cloud-tag">MongoDB</span>
+                    <span class="cloud-tag">Three.js</span>
+                    <span class="cloud-tag">GSAP</span>
+                    <span class="cloud-tag">Git & GitHub</span>
+                    <span class="cloud-tag">RESTful APIs</span>
+                    <span class="cloud-tag">JWT</span>
+                    <span class="cloud-tag">Linux</span>
                 </div>
             </div>
-            <span class="section-tag section-tag-close reveal-up">&lt;/skills&gt;</span>
         </div>
     </section>
 
@@ -346,354 +470,569 @@
             <div class="section-header reveal-up">
                 <span class="section-tag">&lt;projects&gt;</span>
                 <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-                <div class="section-line"></div>
+                <p class="section-subtitle">Real-world applications spanning Full-Stack Web Development, AI/ML, and
+                    Computer Vision.</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card reveal-up" style="--delay: 0.1s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="building-2"></i>
-                            </div>
-                            <div class="project-number">01</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Campus Management System</h3>
-                            <p class="project-description">
-                                A comprehensive platform for managing campus operations including attendance tracking,
-                                student management, feedback systems, and timetable management with role-based access
-                                control.
-                            </p>
-                            <div class="project-tech">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>JWT</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch/college360.git" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://college360-ibj2.vercel.app/" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card reveal-up" style="--delay: 0.2s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="shield-alert"></i>
-                            </div>
-                            <div class="project-number">02</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Phishing Site Detector</h3>
-                            <p class="project-description">
-                                A machine learning-powered system that identifies and flags phishing websites
-                                by analyzing URL patterns, page content, and security certificates to protect users from
-                                cyber threats.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Scikit-learn</span>
-                                <span>ML</span>
-                                <span>NLP</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch/phishing-detection-system-using-ml.git" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal-up" style="--delay: 0.3s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="scan-face"></i>
-                            </div>
-                            <div class="project-number">03</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Face Recognition Attendance</h3>
-                            <p class="project-description">
-                                An intelligent attendance system using facial recognition with real-time face detection,
-                                GPS verification, and QR code authentication for secure and automated attendance
-                                tracking.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>OpenCV</span>
-                                <span>Deep Learning</span>
-                                <span>Flask</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch/FACE-RECOGNITION-SYSTEM-V2.git" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://github.com/sandeep2409-gitch/FACE-RECOGNITION-SYSTEM-V2.git" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal-up" style="--delay: 0.4s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="hand"></i>
-                            </div>
-                            <div class="project-number">04</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Sign to Text Conversion</h3>
-                            <p class="project-description">
-                                A machine learning system that converts sign language gestures to text in real-time,
-                                bridging communication gaps and enabling accessibility for hearing-impaired individuals.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>MediaPipe</span>
-                                <span>CNN</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch/SIGN-TO-TEXT-CONVERT.git" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal-up" style="--delay: 0.5s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="brain"></i>
-                            </div>
-                            <div class="project-number">05</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Brain Tumor Prediction</h3>
-                            <p class="project-description">
-                                An AI-powered medical imaging model that analyzes brain MRI scans to detect and classify
-                                tumors with high accuracy, assisting medical professionals in early diagnosis.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>CNN</span>
-                                <span>Keras</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal-up" style="--delay: 0.6s">
-                    <div class="project-card-inner">
-                        <div class="project-header"
-                            style="--gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
-                            <div class="project-icon">
-                                <i data-lucide="map"></i>
-                            </div>
-                            <div class="project-number">06</div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Village Explorer</h3>
-                            <p class="project-description">
-                                An interactive platform for exploring villages, showcasing local culture, geography,
-                                and resources. Features maps, media galleries, and community information systems.
-                            </p>
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>APIs</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="project-link">
-                                    <i data-lucide="github"></i>
-                                    <span>Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                    <span>Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="filter-tabs reveal-up">
+                <button class="project-filter-btn active" data-pfilter="all">All Projects</button>
+                <button class="project-filter-btn" data-pfilter="fullstack">Full-Stack Web</button>
+                <button class="project-filter-btn" data-pfilter="ai-security">AI & Security</button>
+                <button class="project-filter-btn" data-pfilter="vision">Computer Vision</button>
             </div>
-            <span class="section-tag section-tag-close reveal-up">&lt;/projects&gt;</span>
+
+            <div class="projects-grid" id="projectsGrid">
+                
+                <article class="project-card reveal-up" data-pcat="fullstack">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="building-2"></i> Full-Stack Web</div>
+                        <span class="project-num">01</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">Campus Management System (College360)</h3>
+                        <p class="project-description">
+                            Comprehensive platform for campus administration featuring attendance tracking, student
+                            databases, feedback loops, and timetable scheduling with role-based JWT access.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch/college360.git" target="_blank"
+                                class="btn-project-link" title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                            <a href="https://college360-ibj2.vercel.app/" target="_blank"
+                                class="btn-project-link primary" title="Live Preview">
+                                <i data-lucide="external-link"></i> Live Demo
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="college360">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" data-pcat="ai-security">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="shield-alert"></i> AI & Cyber Security</div>
+                        <span class="project-num">02</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">ML Phishing Site Detector</h3>
+                        <p class="project-description">
+                            Machine learning system analyzing URL structures, lexical patterns, and security metrics in
+                            real-time to identify malicious phishing websites and alert users.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch/phishing-detection-system-using-ml.git"
+                                target="_blank" class="btn-project-link" title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="phishing">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" data-pcat="vision">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="scan-face"></i> Computer Vision</div>
+                        <span class="project-num">03</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">Facial Recognition Attendance System</h3>
+                        <p class="project-description">
+                            Automated attendance tracking combining real-time face detection algorithms, GPS geolocation
+                            verification, and fallback QR authentication for high security.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch/FACE-RECOGNITION-SYSTEM-V2.git"
+                                target="_blank" class="btn-project-link" title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="facerecog">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" data-pcat="vision">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="hand"></i> AI & Accessibility</div>
+                        <span class="project-num">04</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">Sign Language to Text Converter</h3>
+                        <p class="project-description">
+                            Real-time camera pipeline translating sign language hand gestures into readable text using
+                            computer vision hand-tracking and Convolutional Neural Networks.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch/SIGN-TO-TEXT-CONVERT.git" target="_blank"
+                                class="btn-project-link" title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="signtotext">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" data-pcat="ai-security">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="brain"></i> Medical AI</div>
+                        <span class="project-num">05</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">AI Brain Tumor Detector</h3>
+                        <p class="project-description">
+                            Deep Learning model trained on MRI neuro-imaging datasets to detect, locate, and classify
+                            brain tumors with high precision to assist early diagnostics.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch" target="_blank" class="btn-project-link"
+                                title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="braintumor">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+
+                <article class="project-card reveal-up" data-pcat="fullstack">
+                    <div class="project-card-header">
+                        <div class="project-type-tag"><i data-lucide="map"></i> Web App</div>
+                        <span class="project-num">06</span>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-title">Village Explorer Platform</h3>
+                        <p class="project-description">
+                            Interactive digital mapping and cultural portal showcasing rural resources, media galleries,
+                            maps, and community information systems.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Maps</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-links">
+                            <a href="https://github.com/sandeep2409-gitch" target="_blank" class="btn-project-link"
+                                title="GitHub Repository">
+                                <i data-lucide="github"></i> Code
+                            </a>
+                        </div>
+                        <button class="btn-quick-view" data-project="village">
+                            <i data-lucide="eye"></i> Details
+                        </button>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">My <span class="gradient-text">Experience</span></h2>
+                <p class="section-subtitle">Highlights of projects, engineering roles, and academic endeavors.</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                
+                <div class="timeline-card reveal-up">
+                    <div class="timeline-badge"><i data-lucide="layers"></i></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">Jun 2026 - Present &middot; Remote</span>
+                        <h3 class="timeline-title">MERN Stack Developer Intern</h3>
+                        <div class="company-tag"><i data-lucide="building-2"></i> Webstack Academy (WSA)</div>
+                        <p class="timeline-desc">
+                            Building scalable full-stack web applications using MongoDB, Express.js, React.js, and
+                            Node.js with responsive user interfaces and RESTful APIs.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card reveal-up">
+                    <div class="timeline-badge"><i data-lucide="layout"></i></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">Jun 2026 - Present &middot; Remote</span>
+                        <h3 class="timeline-title">Professional UI/UX Design & Web Prototyping Intern</h3>
+                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
+                        <p class="timeline-desc">
+                            Crafting high-fidelity UI/UX prototypes, wireframes, and design systems for web interfaces,
+                            focusing on user accessibility and interaction design.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UI/UX Design</span>
+                            <span class="tech-tag">Web Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card reveal-up">
+                    <div class="timeline-badge"><i data-lucide="terminal"></i></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">Mar 2026 - Jun 2026 &middot; 4 mos &middot; Remote</span>
+                        <h3 class="timeline-title">Python Full Stack Developer Intern</h3>
+                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
+                        <p class="timeline-desc">
+                            Engineered full-stack Python web solutions, backend API routing, database models, and
+                            dynamic server-side rendering pipelines.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Full Stack</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card reveal-up">
+                    <div class="timeline-badge"><i data-lucide="shield-check"></i></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">Jan 2026 - Mar 2026 &middot; 3 mos &middot; Remote</span>
+                        <h3 class="timeline-title">Ethical Hacker Intern</h3>
+                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
+                        <p class="timeline-desc">
+                            Conducted cybersecurity vulnerability assessments, threat analysis, network security audits,
+                            and penetration testing simulations.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tech-tag">Ethical Hacking</span>
+                            <span class="tech-tag">Cyber Security</span>
+                            <span class="tech-tag">Vulnerability Assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hackathons" id="hackathons">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;hackathons&gt;</span>
+                <h2 class="section-title">Hackathons & <span class="gradient-text">Challenges</span></h2>
+                <p class="section-subtitle">Building innovative prototypes under intense sprint deadlines.</p>
+            </div>
+
+            <div class="hackathons-grid">
+                
+                <div class="hackathon-card reveal-up">
+                    <div class="hackathon-icon" style="--icon-accent: #facc15;"><i data-lucide="trophy"></i></div>
+                    <div class="award-badge-pill"><i data-lucide="award"></i> Hackathon Winner</div>
+                    <h3 class="hackathon-title">CODESTORM College Hackathon</h3>
+                    <p class="hackathon-desc">
+                        Recognized at CODESTORM for presenting <strong>College360</strong> — a centralized
+                        MERN-stack campus management platform with real-time attendance tracking, feedback systems, and
+                        JWT security.
+                    </p>
+                    <div class="hackathon-tags">
+                        <span class="tech-tag">CODESTORM</span>
+                        <span class="tech-tag">College360</span>
+                        <span class="tech-tag">MERN Stack</span>
+                    </div>
+                </div>
+
+                <div class="hackathon-card reveal-up">
+                    <div class="hackathon-icon" style="--icon-accent: #a855f7;"><i data-lucide="award"></i></div>
+                    <div class="award-badge-pill gold"><i data-lucide="trophy"></i> Competition Winner</div>
+                    <h3 class="hackathon-title">Coding & Debugging Competition</h3>
+                    <p class="hackathon-desc">
+                        Achieved top honors by diagnosing complex software bugs, optimizing data structure efficiency,
+                        and solving competitive programming challenges under strict timer constraints.
+                    </p>
+                    <div class="hackathon-tags">
+                        <span class="tech-tag">Debugging</span>
+                        <span class="tech-tag">Algorithms</span>
+                        <span class="tech-tag">Problem Solving</span>
+                    </div>
+                </div>
+
+                <div class="hackathon-card reveal-up">
+                    <div class="hackathon-icon"><i data-lucide="shield-check"></i></div>
+                    <h3 class="hackathon-title">Cyber Security & AI Threat Challenge</h3>
+                    <p class="hackathon-desc">Developed an automated URL threat analyzer trained on real-world phishing
+                        datasets to detect malicious web domains instantly.</p>
+                    <div class="hackathon-tags">
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">&lt;achievements&gt;</span>
+                <h2 class="section-title">Key <span class="gradient-text">Achievements</span></h2>
+                <p class="section-subtitle">Academic milestones, open-source projects, and technical honors.</p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card reveal-up">
+                    <div class="achievement-icon"><i data-lucide="award"></i></div>
+                    <h3 class="achievement-title">Top Academic Performance</h3>
+                    <p class="achievement-desc">Maintaining high academic standing in B.Tech Computer Science & AI
+                        coursework.</p>
+                </div>
+
+                <div class="achievement-card reveal-up">
+                    <div class="achievement-icon"><i data-lucide="github"></i></div>
+                    <h3 class="achievement-title">Active Open Source Repos</h3>
+                    <p class="achievement-desc">Published multiple public repositories covering Full-Stack Apps, ML
+                        models, and CV systems.</p>
+                </div>
+
+                <div class="achievement-card reveal-up">
+                    <div class="achievement-icon"><i data-lucide="brain"></i></div>
+                    <h3 class="achievement-title">Medical AI Model Training</h3>
+                    <p class="achievement-desc">Successfully trained CNN deep learning models for high-accuracy brain
+                        MRI tumor classification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+            <div class="modal-header-gradient" id="modalHeaderGradient"></div>
+            <div class="modal-body">
+                <span class="modal-category" id="modalCategory">Full Stack</span>
+                <h3 class="modal-title" id="modalTitle">Project Title</h3>
+                <p class="modal-desc" id="modalDesc">Detailed description goes here...</p>
+
+                <div class="modal-section-title"><i data-lucide="layers"></i> Tech Stack</div>
+                <div class="modal-tech-list" id="modalTechList"></div>
+
+                <div class="modal-section-title"><i data-lucide="list-checks"></i> Key Highlights & Features</div>
+                <ul class="modal-features-list" id="modalFeaturesList"></ul>
+
+                <div class="modal-actions">
+                    <a href="#" target="_blank" id="modalGithubBtn" class="btn btn-outline">
+                        <i data-lucide="github"></i> <span>View Code</span>
+                    </a>
+                    <a href="#" target="_blank" id="modalDemoBtn" class="btn btn-primary">
+                        <i data-lucide="external-link"></i> <span>Live Demo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-tag">&lt;contact&gt;</span>
                 <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Interested in working together? Drop your details and I'll get back to you!
+                <p class="section-subtitle">Interested in collaborating or discussing an opportunity? Drop a message!
                 </p>
             </div>
+
             <div class="contact-grid">
-                <div class="contact-info reveal-left">
-                    <h3 class="contact-heading">Let's connect</h3>
+                
+                <div class="contact-info reveal-up">
+                    <h3 class="contact-heading">Let's Connect & Collaborate</h3>
                     <p class="contact-text">
-                        Fill in the form with your details and message &mdash; I'll review it and
-                        get back to you as soon as possible. Looking forward to hearing from you!
+                        I am actively seeking internship opportunities, freelance engineering projects, and research
+                        collaborations in Full-Stack Development and AI/ML.
                     </p>
-                    <div class="contact-details">
-                        <a href="mailto:sandeepmanchinasetti007@gmail.com" class="contact-item">
-                            <div class="contact-item-icon">
-                                <i data-lucide="mail"></i>
+
+                    <div class="contact-cards-list">
+                        <div class="contact-chip" id="copyEmailChip" title="Click to copy email">
+                            <div class="chip-icon"><i data-lucide="mail"></i></div>
+                            <div class="chip-details">
+                                <span class="chip-label">Email Address (Click to copy)</span>
+                                <span class="chip-value">sandeepmanchinasetti007@gmail.com</span>
                             </div>
-                            <div>
-                                <span class="contact-item-label">Email</span>
-                                <span class="contact-item-value">sandeepmanchinasetti007@gmail.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="contact-item">
-                            <div class="contact-item-icon">
-                                <i data-lucide="github"></i>
-                            </div>
-                            <div>
-                                <span class="contact-item-label">GitHub</span>
-                                <span class="contact-item-value">sandeep2409-gitch</span>
-                            </div>
-                        </a>
-                        <a href="#" class="contact-item">
-                            <div class="contact-item-icon">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div>
-                                <span class="contact-item-label">Location</span>
-                                <span class="contact-item-value">India</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="contact-code">
-                        <div class="code-header">
-                            <span class="code-dot" style="background: #ff5f57"></span>
-                            <span class="code-dot" style="background: #febc2e"></span>
-                            <span class="code-dot" style="background: #28c840"></span>
-                            <span class="code-title">contact.js</span>
+                            <i data-lucide="copy" class="chip-action-icon"></i>
                         </div>
-                        <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">sandeep</span> = {
+
+                        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="contact-chip">
+                            <div class="chip-icon"><i data-lucide="github"></i></div>
+                            <div class="chip-details">
+                                <span class="chip-label">GitHub Profile</span>
+                                <span class="chip-value">github.com/sandeep2409-gitch</span>
+                            </div>
+                            <i data-lucide="external-link" class="chip-action-icon"></i>
+                        </a>
+
+                        <a href="https://x.com/lovly_pandu07" target="_blank" class="contact-chip">
+                            <div class="chip-icon"><i data-lucide="twitter"></i></div>
+                            <div class="chip-details">
+                                <span class="chip-label">Twitter / X</span>
+                                <span class="chip-value">x.com/lovly_pandu07</span>
+                            </div>
+                            <i data-lucide="external-link" class="chip-action-icon"></i>
+                        </a>
+
+                        <div class="contact-chip">
+                            <div class="chip-icon"><i data-lucide="map-pin"></i></div>
+                            <div class="chip-details">
+                                <span class="chip-label">Location</span>
+                                <span class="chip-value">India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-code-card">
+                        <div class="card-bar">
+                            <span class="bar-dot red"></span>
+                            <span class="bar-dot yellow"></span>
+                            <span class="bar-dot green"></span>
+                            <span class="bar-title">contact_dev.ts</span>
+                            <button class="code-copy-btn" id="copyCodeBtn" title="Copy code snippet">
+                                <i data-lucide="copy"></i>
+                            </button>
+                        </div>
+                        <pre class="card-code"><code id="codeSnippet"><span class="code-keyword">const</span> <span class="code-var">sandeep</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Sandeep Manchinasetti"</span>,
   <span class="code-prop">email</span>: <span class="code-string">"sandeepmanchinasetti007@gmail.com"</span>,
-  <span class="code-prop">passion</span>: <span class="code-string">"Building cool stuff"</span>,
-  <span class="code-prop">openTo</span>: [
-    <span class="code-string">"Collaborations"</span>,
-    <span class="code-string">"Freelance"</span>,
-    <span class="code-string">"Full-time"</span>
-  ],
-  <span class="code-func">hireable</span>: () => <span class="code-bool">true</span>
+  <span class="code-prop">role</span>: <span class="code-string">"AI Security Engineer & Full Stack Dev"</span>,
+  <span class="code-prop">openTo</span>: [<span class="code-string">"Internships"</span>, <span class="code-string">"Full-time"</span>, <span class="code-string">"Projects"</span>],
+  <span class="code-func">hireable</span>: () =&gt; <span class="code-bool">true</span>
 };</code></pre>
                     </div>
                 </div>
-                <div class="contact-form-wrapper reveal-right">
+
+                <div class="contact-form-wrapper reveal-up">
                     <form class="contact-form" id="contactForm"
                         action="https://formsubmit.co/sandeepmanchinasetti007@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                        <input type="hidden" name="_subject" value="New 3D Portfolio Contact Message!">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="">
                         <input type="text" name="_honey" style="display:none">
+
+                        <h3 class="form-title">Send a Direct Message</h3>
+
                         <div class="form-group">
                             <input type="text" name="name" id="contactName" class="form-input" placeholder=" " required>
                             <label for="contactName" class="form-label">Your Name</label>
                             <div class="form-line"></div>
                         </div>
+
                         <div class="form-group">
                             <input type="email" name="email" id="contactEmail" class="form-input" placeholder=" "
                                 required>
                             <label for="contactEmail" class="form-label">Your Email</label>
                             <div class="form-line"></div>
                         </div>
+
                         <div class="form-group">
                             <input type="text" name="subject" id="contactSubject" class="form-input" placeholder=" ">
                             <label for="contactSubject" class="form-label">Subject</label>
                             <div class="form-line"></div>
                         </div>
+
                         <div class="form-group">
                             <textarea name="message" id="contactMessage" class="form-input form-textarea"
                                 placeholder=" " required rows="5"></textarea>
                             <label for="contactMessage" class="form-label">Your Message</label>
                             <div class="form-line"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
+
+                        <button type="submit" class="btn btn-primary btn-submit btn-glow">
                             <span>Send Message</span>
                             <i data-lucide="send"></i>
                         </button>
-
                     </form>
                 </div>
             </div>
-            <span class="section-tag section-tag-close reveal-up">&lt;/contact&gt;</span>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#hero" class="footer-logo">
                     <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
-                </div>
-                <p class="footer-text">Designed & Built by Sandeep Manchinasetti</p>
-                <div class="footer-socials">
-                    <a href="mailto:sandeepmanchinasetti007@gmail.com" class="footer-social" aria-label="Email">
-                        <i data-lucide="mail"></i>
-                    </a>
-                    <a href="https://github.com/sandeep2409-gitch" target="_blank" class="footer-social"
-                        aria-label="GitHub">
-                        <i data-lucide="github"></i>
-                    </a>
-                </div>
-                <p class="footer-copyright">&copy; 2026 Sandeep Manchinasetti. All rights reserved.</p>
+                </a>
+            </div>
+
+            <div class="footer-center">
+                <p class="copyright">&copy; 2026 Sandeep Manchinasetti. All rights reserved.</p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="mailto:sandeepmanchinasetti007@gmail.com" class="social-icon-btn" aria-label="Email">
+                    <i data-lucide="mail"></i>
+                </a>
+                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="social-icon-btn"
+                    aria-label="GitHub">
+                    <i data-lucide="github"></i>
+                </a>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
+    <script>
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+    </script>
 </body>
 
 </html>
