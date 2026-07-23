@@ -325,8 +325,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
-  navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-  document.querySelectorAll(".nav-link").forEach((l) => l.addEventListener("click", () => navLinks.classList.remove("open")));
+  const navBackdrop = document.getElementById("navBackdrop");
+
+  function closeMobileNav() {
+    if (navLinks) navLinks.classList.remove("open");
+    if (navToggle) navToggle.classList.remove("open");
+    if (navBackdrop) navBackdrop.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  }
+
+  function toggleMobileNav() {
+    if (!navLinks) return;
+    const isOpen = navLinks.classList.toggle("open");
+    if (navToggle) navToggle.classList.toggle("open", isOpen);
+    if (navBackdrop) navBackdrop.classList.toggle("show", isOpen);
+    document.body.classList.toggle("no-scroll", isOpen);
+  }
+
+  if (navToggle) navToggle.addEventListener("click", toggleMobileNav);
+  if (navBackdrop) navBackdrop.addEventListener("click", closeMobileNav);
+  document.querySelectorAll(".nav-link, .mobile-nav-cta a").forEach((l) => l.addEventListener("click", closeMobileNav));
 
   const skillBtns = document.querySelectorAll(".filter-btn");
   const skillCards = document.querySelectorAll(".skill-card");
