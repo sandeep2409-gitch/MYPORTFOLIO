@@ -2135,6 +2135,95 @@ i[data-lucide], svg.lucide {
 
 .modal-actions { display: flex; gap: 1rem; }
 
+.resume-modal-content {
+  max-width: 920px;
+  width: 94vw;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(18, 18, 26, 0.98);
+  border: 1px solid var(--border-glass-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.85), var(--shadow-glow);
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(12, 12, 18, 0.96);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.resume-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.resume-modal-title-group i,
+.resume-modal-title-group svg {
+  width: 22px;
+  height: 22px;
+  color: var(--primary);
+}
+
+.resume-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.resume-modal-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.resume-modal-subtitle i,
+.resume-modal-subtitle svg {
+  width: 13px;
+  height: 13px;
+  color: var(--accent-green);
+}
+
+.pdf-viewer-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #09090e;
+  overflow: hidden;
+}
+
+.pdf-viewer-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #09090e;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pdf-protected-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+}
+
 .contact {
   padding: 7rem 0;
   position: relative;
@@ -2462,6 +2551,9 @@ i[data-lucide], svg.lucide {
   .modal-backdrop { padding: 0.75rem; }
   .modal-content { max-height: 85vh; width: 100%; }
   .modal-body { padding: 1.5rem; }
+  .resume-modal-content { width: 98vw; height: 90vh; border-radius: var(--radius-md); }
+  .resume-modal-header { padding: 0.85rem 1rem; }
+  .resume-modal-title { font-size: 1rem; }
 }
 
 @media (max-width: 640px) {
@@ -2582,6 +2674,9 @@ i[data-lucide], svg.lucide {
                     <span>Contact</span> <kbd>Jump</kbd>
                 </div>
                 <div class="cmd-group-title">Actions</div>
+                <div class="cmd-item" data-action="open-resume"><i data-lucide="file-text"></i> <span>View Resume (PDF Popup)</span>
+                    <kbd>Preview</kbd>
+                </div>
                 <div class="cmd-item" data-action="copy-email"><i data-lucide="copy"></i> <span>Copy Email
                         Address</span> <kbd>Action</kbd></div>
                 <div class="cmd-item" data-action="github"><i data-lucide="github"></i> <span>Open GitHub Profile</span>
@@ -2607,11 +2702,10 @@ i[data-lucide], svg.lucide {
                     <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
                     <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
                     <li class="mobile-nav-cta">
-                        <a href="mailto:sandeepmanchinasetti007@gmail.com" target="_blank"
-                            class="btn btn-sm btn-primary w-full">
-                            <i data-lucide="mail"></i>
-                            <span>Contact Me</span>
-                        </a>
+                        <button class="btn btn-sm btn-primary w-full nav-resume-btn">
+                            <i data-lucide="file-text"></i>
+                            <span>View Resume</span>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -2625,10 +2719,10 @@ i[data-lucide], svg.lucide {
                     <i data-lucide="command"></i>
                     <span class="cmd-key-hint">⌘K</span>
                 </button>
-                <a href="mailto:sandeepmanchinasetti007@gmail.com" target="_blank"
-                    class="btn btn-sm btn-outline nav-resume-btn">
+                <button class="btn btn-sm btn-outline nav-resume-btn" id="headerResumeBtn">
+                    <i data-lucide="file-text"></i>
                     <span>Resume</span>
-                </a>
+                </button>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
@@ -2684,10 +2778,10 @@ i[data-lucide], svg.lucide {
         </div>
 
         <div class="bottom-right-resume">
-            <a href="mailto:sandeepmanchinasetti007@gmail.com" class="btn-minimal-resume">
+            <button class="btn-minimal-resume" id="heroResumeBtn">
                 <span>RESUME</span>
                 <i data-lucide="arrow-up-right"></i>
-            </a>
+            </button>
         </div>
     </section>
 
@@ -3357,6 +3451,25 @@ i[data-lucide], svg.lucide {
         </div>
     </div>
 
+    <div class="modal-backdrop" id="resumeModal">
+        <div class="modal-content resume-modal-content">
+            <div class="resume-modal-header">
+                <div class="resume-modal-title-group">
+                    <i data-lucide="file-text"></i>
+                    <div>
+                        <h3 class="resume-modal-title">Sandeep Manchinasetti — Resume</h3>
+                        <span class="resume-modal-subtitle"><i data-lucide="shield-check"></i> Protected View (View Only)</span>
+                    </div>
+                </div>
+                <button class="modal-close" id="resumeModalCloseBtn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="pdf-viewer-container" oncontextmenu="return false;">
+                <iframe src="sandy.pdf#toolbar=0&navpanes=0&scrollbar=0" class="pdf-viewer-iframe" title="Sandeep Manchinasetti Resume" loading="lazy"></iframe>
+                <div class="pdf-protected-overlay"></div>
+            </div>
+        </div>
+    </div>
+
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header reveal-up">
@@ -4015,6 +4128,32 @@ document.addEventListener("DOMContentLoaded", () => {
   modalCloseBtn.addEventListener("click", closeModal);
   projectModal.addEventListener("click", (e) => { if (e.target === projectModal) closeModal(); });
 
+  const resumeModal = document.getElementById("resumeModal");
+  const resumeModalCloseBtn = document.getElementById("resumeModalCloseBtn");
+
+  function openResumeModal(e) {
+    if (e) e.preventDefault();
+    if (resumeModal) resumeModal.classList.add("open");
+    document.body.classList.add("no-scroll");
+    renderAllIcons();
+  }
+
+  function closeResumeModal() {
+    if (resumeModal) resumeModal.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  }
+
+  document.querySelectorAll(".nav-resume-btn, .btn-minimal-resume, [data-action='open-resume']").forEach((btn) => {
+    btn.addEventListener("click", openResumeModal);
+  });
+
+  if (resumeModalCloseBtn) resumeModalCloseBtn.addEventListener("click", closeResumeModal);
+  if (resumeModal) {
+    resumeModal.addEventListener("click", (e) => {
+      if (e.target === resumeModal) closeResumeModal();
+    });
+  }
+
   const cmdBackdrop = document.getElementById("cmdBackdrop");
   const cmdInput = document.getElementById("cmdInput");
   const cmdTriggerBtn = document.getElementById("cmdTriggerBtn");
@@ -4040,6 +4179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") {
       closeCmdPalette();
       closeModal();
+      closeResumeModal();
     }
   });
 
@@ -4068,6 +4208,8 @@ document.addEventListener("DOMContentLoaded", () => {
         showToast("Email address copied to clipboard!");
       } else if (action === "github") {
         window.open("https://github.com/sandeep2409-gitch", "_blank");
+      } else if (action === "open-resume") {
+        openResumeModal();
       }
       closeCmdPalette();
     });
