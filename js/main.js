@@ -1,6 +1,4 @@
-import os
-
-js_code = """/**
+/**
  * Sandeep Manchinasetti Portfolio - Ultra-Lightweight Zero-Dependency Engine
  * 100% Vanilla JS + WebGL. Zero External Libraries. 120 FPS Native Performance.
  */
@@ -74,15 +72,19 @@ if (document.readyState === "loading") {
 document.addEventListener("DOMContentLoaded", () => {
   renderAllIcons();
 
-  // Page Loader Setup
-  const loader = document.getElementById("loader");
-  if (loader) {
-    setTimeout(() => {
+  // Failsafe Page Loader Dismissal
+  function dismissLoader() {
+    const loader = document.getElementById("loader");
+    if (loader && !loader.classList.contains("hidden")) {
       loader.classList.add("hidden");
       document.body.style.overflow = "auto";
       initNativeScrollAnimations();
-    }, 500);
+    }
   }
+  setTimeout(dismissLoader, 300);
+  window.addEventListener("load", dismissLoader);
+
+
 
   // Toast Notification System
   const toast = document.getElementById("toast");
@@ -968,9 +970,3 @@ function buildIcosahedronWireframe(radius) {
   }
   return { positions: new Float32Array(pos), indices: new Uint16Array(idx) };
 }
-"""
-
-with open("js/main.js", "w") as f:
-    f.write(js_code)
-
-print("Created ultra-lightweight js/main.js! Size:", len(js_code), "bytes")
