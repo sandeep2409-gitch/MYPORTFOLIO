@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const leftReflect = document.getElementById("leftReflect");
   const rightReflect = document.getElementById("rightReflect");
   const pfpContainer = document.getElementById("pfpContainer");
-  const reactiveEmoji = document.getElementById("reactiveEmoji");
 
   let avatarRect = null;
   function updateAvatarRect() {
@@ -651,11 +650,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Interactive Profile Card Status
-  const emojis = ["⚡", "🚀", "💻", "🤖", "🔥", "🛡️", "🔮", "🧠"];
-  let emojiIdx = 0;
-
-  if (pfpContainer && reactiveEmoji) {
+  // Interactive Profile Card 3D Tilt Effect
+  if (pfpContainer) {
     pfpContainer.addEventListener("mousemove", (e) => {
       const rect = pfpContainer.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -664,26 +660,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const tiltX = (y / rect.height) * -20;
       const tiltY = (x / rect.width) * 20;
 
-      reactiveEmoji.style.transform = `scale(1.25) translate(${x * 0.25}px, ${y * 0.25}px) rotate(${tiltY * 0.8}deg)`;
       if (cyberAvatar) {
         cyberAvatar.style.transform = `perspective(500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
       }
     }, { passive: true });
 
     pfpContainer.addEventListener("mouseleave", () => {
-      reactiveEmoji.style.transform = `scale(1) translate(0px, 0px) rotate(0deg)`;
       if (cyberAvatar) {
         cyberAvatar.style.transform = `perspective(500px) rotateX(0deg) rotateY(0deg)`;
       }
-    });
-
-    reactiveEmoji.addEventListener("click", (e) => {
-      e.stopPropagation();
-      emojiIdx = (emojiIdx + 1) % emojis.length;
-      reactiveEmoji.textContent = emojis[emojiIdx];
-      reactiveEmoji.style.transform = `scale(1.6) rotate(360deg)`;
-      setTimeout(() => { reactiveEmoji.style.transform = `scale(1.2) rotate(0deg)`; }, 250);
-      showToast(`Profile status updated: ${emojis[emojiIdx]}`);
     });
   }
 });
