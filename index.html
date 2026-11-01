@@ -1,1160 +1,688 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Manchinasetti | AI Engineer & Full Stack Developer</title>
-    <meta name="description"
-        content="Portfolio of Sandeep Manchinasetti. AI Security Engineer, Full Stack Developer, and Machine Learning Enthusiast.">
-    <meta name="keywords"
-        content="Sandeep Manchinasetti, Sandeep, AI Security Engineer, Full Stack Developer, Machine Learning, Python, React, Cybersecurity, Portfolio">
-    <meta name="author" content="Sandeep Manchinasetti">
-    <meta name="google-site-verification" content="google6db689083238e71a" />
-    <link rel="canonical" href="https://sandeepmanchinasetti.vercel.app/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sandeep Manchinasetti is a full-stack developer and applied AI engineer building practical web architectures, computer vision systems, and machine learning pipelines.">
+  <meta name="author" content="Sandeep Manchinasetti">
+  <meta name="keywords" content="Sandeep Manchinasetti, Portfolio, Full-Stack Developer, Applied AI, Computer Vision, MERN Stack, Python, Machine Learning, Kakinada">
+  <meta name="theme-color" content="#f7f5ef">
 
-    <!-- Favicons for Google Search & Browsers -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sandeepmanchinasetti.vercel.app/">
+  <meta property="og:title" content="Sandeep Manchinasetti — Full-Stack & Applied AI Engineer">
+  <meta property="og:description" content="Portfolio of selected work across full-stack web platforms, medical deep learning, computer vision, and security systems.">
+  <meta property="og:image" content="https://sandeepmanchinasetti.vercel.app/profile.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sandeep Manchinasetti — Full-Stack & Applied AI Engineer">
+  <meta name="twitter:description" content="Selected work in full-stack platforms, computer vision, deep learning, and cyber security.">
+  <meta name="twitter:image" content="https://sandeepmanchinasetti.vercel.app/profile.jpg">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sandeepmanchinasetti.vercel.app/">
-    <meta property="og:site_name" content="Sandeep Manchinasetti">
-    <meta property="og:title" content="Sandeep Manchinasetti | AI Security Engineer & Full Stack Developer">
-    <meta property="og:description"
-        content="Portfolio of Sandeep Manchinasetti. AI Security Engineer, Full Stack Developer, and Machine Learning Enthusiast.">
-    <meta property="og:image" content="https://sandeepmanchinasetti.vercel.app/profile.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@lovly_pandu07">
-    <meta name="twitter:title" content="Sandeep Manchinasetti | AI Engineer & Full Stack Developer">
-    <meta name="twitter:description"
-        content="Portfolio of Sandeep Manchinasetti. AI Security Engineer, Full Stack Developer, and Machine Learning Enthusiast.">
-    <meta name="twitter:image" content="https://sandeepmanchinasetti.vercel.app/profile.jpg">
-
-    <!-- JSON-LD Structured Data for Google Search Site Name & Entity -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Sandeep Manchinasetti",
-        "alternateName": ["Sandeep Manchinasetti Portfolio", "Sandeep Manchinasetti AI Security"],
-        "url": "https://sandeepmanchinasetti.vercel.app/"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sandeep Manchinasetti",
-        "url": "https://sandeepmanchinasetti.vercel.app/",
-        "image": "https://sandeepmanchinasetti.vercel.app/profile.jpg",
-        "sameAs": [
-          "https://github.com/sandeep2409-gitch",
-          "https://x.com/lovly_pandu07",
-          "https://instagram.com/sandeep_manchinasettii007"
-        ],
-        "jobTitle": "AI Security Engineer & Full Stack Developer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Independent"
-        },
-        "knowsAbout": ["AI Security", "Full Stack Development", "Machine Learning", "Python", "React", "Three.js", "Cybersecurity"]
-      }
-    ]
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <script src="js/main.js" defer></script>
+  <link rel="canonical" href="https://sandeepmanchinasetti.vercel.app/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <title>Sandeep Manchinasetti — Portfolio & Engineering Dossier</title>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <div class="noise-overlay"></div>
+  <!-- Floating Circular Bubbles Navigation (Desktop) -->
+  <aside class="floating-bubble-nav" id="bubbleNav" aria-label="Chapter Navigation">
+    <a class="bubble-btn bubble-brand" href="#top" title="Top of Page" aria-label="Sandeep Manchinasetti, top of page">
+      <span class="bubble-brand-text">SM.</span>
+      <span class="bubble-tooltip">Sandeep Manchinasetti</span>
+    </a>
 
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
+    <div class="bubble-spine" aria-hidden="true"></div>
 
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
-            </div>
-            <div class="loader-text">
-                <span>S</span><span>A</span><span>N</span><span>D</span><span>E</span><span>E</span><span>P</span>
-            </div>
+    <nav class="bubble-list" aria-label="Portfolio chapters">
+      <a class="bubble-btn is-active" href="#top" data-nav="top" title="Chapter 01: Prologue" aria-label="Chapter 01: Prologue">
+        <span class="bubble-num">01</span>
+        <span class="bubble-tooltip">01 — Prologue</span>
+      </a>
+      <a class="bubble-btn" href="#skills" data-nav="skills" title="Chapter 02: Field Notes" aria-label="Chapter 02: Field Notes">
+        <span class="bubble-num">02</span>
+        <span class="bubble-tooltip">02 — Field Notes</span>
+      </a>
+      <a class="bubble-btn" href="#work" data-nav="work" title="Chapter 03: Selected Work" aria-label="Chapter 03: Selected Work">
+        <span class="bubble-num">03</span>
+        <span class="bubble-tooltip">03 — Selected Work</span>
+      </a>
+      <a class="bubble-btn" href="#experience" data-nav="experience" title="Chapter 04: Career Desk" aria-label="Chapter 04: Career Desk">
+        <span class="bubble-num">04</span>
+        <span class="bubble-tooltip">04 — Career Desk</span>
+      </a>
+      <a class="bubble-btn" href="#contact" data-nav="contact" title="Chapter 05: Dispatches" aria-label="Chapter 05: Dispatches">
+        <span class="bubble-num">05</span>
+        <span class="bubble-tooltip">05 — Dispatches</span>
+      </a>
+    </nav>
 
-            <div class="loader-bar">
-                <div class="loader-bar-fill"></div>
-            </div>
-        </div>
+    <div class="bubble-spine" aria-hidden="true"></div>
+
+    <div class="bubble-status" title="Open to opportunities (2026)" aria-label="Status: Available for opportunities">
+      <span class="status-pulse-dot" aria-hidden="true"></span>
+      <span class="bubble-tooltip">Available for Opportunities (2026)</span>
     </div>
+  </aside>
 
-    <div class="toast" id="toast">
-        <i data-lucide="check-circle" class="toast-icon"></i>
-        <span id="toastMessage">Copied to clipboard!</span>
+  <!-- Mobile Top Bar -->
+  <header class="mobile-header" aria-label="Mobile Navigation">
+    <a class="mobile-brand" href="#top">SM. <span>/ Portfolio</span></a>
+    <div class="mobile-status">
+      <span class="status-dot" aria-hidden="true"></span> Available
     </div>
+    <nav class="mobile-nav">
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Career</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <aside class="floating-social-bar">
-        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="social-link" title="GitHub">
-            <i data-lucide="github"></i>
-            <span class="social-tooltip">GitHub</span>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
-            <i data-lucide="linkedin"></i>
-            <span class="social-tooltip">LinkedIn</span>
-        </a>
-        <a href="https://x.com/lovly_pandu07" target="_blank" class="social-link" title="Twitter / X (@lovly_pandu07)">
-            <i data-lucide="twitter"></i>
-            <span class="social-tooltip">Twitter / X</span>
-        </a>
-        <a href="https://instagram.com/sandeep_manchinasettii007" target="_blank" class="social-link"
-            title="Instagram (@sandeep_manchinasettii007)">
-            <i data-lucide="instagram"></i>
-            <span class="social-tooltip">Instagram</span>
-        </a>
-        <div class="social-line"></div>
-    </aside>
+  <!-- Main Document -->
+  <main id="main">
+    
+    <!-- CHAPTER 01: PROLOGUE / HERO -->
+    <section class="chapter hero" id="top" data-section="top" data-folio="01">
+      <div class="hero-topline">
+        <span>Sandeep Manchinasetti</span>
+        
+      </div>
 
-    <div class="cmd-palette-backdrop" id="cmdBackdrop">
-        <div class="cmd-palette">
-            <div class="cmd-input-wrapper">
-                <i data-lucide="search" class="cmd-search-icon"></i>
-                <input type="text" id="cmdInput"
-                    placeholder="Type a command or section... (e.g. Projects, Experience, Skills, Email)"
-                    autocomplete="off">
-                <span class="cmd-badge">ESC</span>
-            </div>
-            <div class="cmd-results" id="cmdResults">
-                <div class="cmd-group-title">Navigation</div>
-                <div class="cmd-item" data-action="nav" data-target="hero"><i data-lucide="home"></i> <span>Home /
-                        Hero</span> <kbd>Jump</kbd></div>
-                <div class="cmd-item" data-action="nav" data-target="about"><i data-lucide="user"></i> <span>About
-                        Me</span> <kbd>Jump</kbd></div>
-                <div class="cmd-item" data-action="nav" data-target="skills"><i data-lucide="code-2"></i> <span>Skills &
-                        Stack</span> <kbd>Jump</kbd></div>
-                <div class="cmd-item" data-action="nav" data-target="projects"><i data-lucide="folder-git-2"></i>
-                    <span>Featured Projects</span> <kbd>Jump</kbd>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="experience"><i data-lucide="briefcase"></i>
-                    <span>Experience Timeline</span> <kbd>Jump</kbd>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="hackathons"><i data-lucide="trophy"></i>
-                    <span>Hackathons</span> <kbd>Jump</kbd>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="achievements"><i data-lucide="award"></i>
-                    <span>Achievements</span> <kbd>Jump</kbd>
-                </div>
-                <div class="cmd-item" data-action="nav" data-target="contact"><i data-lucide="mail"></i>
-                    <span>Contact</span> <kbd>Jump</kbd>
-                </div>
-                <div class="cmd-group-title">Actions</div>
-                <div class="cmd-item" data-action="open-resume"><i data-lucide="file-text"></i> <span>View Resume (PDF
-                        Popup)</span>
-                    <kbd>Preview</kbd>
-                </div>
-                <div class="cmd-item" data-action="copy-email"><i data-lucide="copy"></i> <span>Copy Email
-                        Address</span> <kbd>Action</kbd></div>
-                <div class="cmd-item" data-action="github"><i data-lucide="github"></i> <span>Open GitHub Profile</span>
-                    <kbd>External</kbd>
-                </div>
-            </div>
+      <div class="hero-body reveal">
+        <p class="chapter-label">Engineering &amp; Applied AI</p>
+        <h1 class="hero-title">
+          Building systems where <em>solid engineering</em> meets practical intelligence.
+        </h1>
+        <p class="hero-lede">
+          I am a Computer Science &amp; Artificial Intelligence student crafting production-grade MERN web platforms, 
+          deep-learning computer vision systems, and defensive security solutions that deliver tangible utility.
+        </p>
+
+        <div class="hero-proof-strip">
+          <div class="proof-pill">
+            <span class="proof-tag">Rank #1</span>
+            <span class="proof-val">GeeksforGeeks Institute</span>
+          </div>
+          <div class="proof-pill">
+            <span class="proof-tag">Winner</span>
+            <span class="proof-val">CODESTORM S2 Hackathon</span>
+          </div>
+          <div class="proof-pill">
+            <span class="proof-tag">5+ Projects</span>
+            <span class="proof-val">Production &amp; Research</span>
+          </div>
+          <div class="proof-pill">
+            <span class="proof-tag">4 Internships</span>
+            <span class="proof-val">Full-Stack &amp; Security</span>
+          </div>
         </div>
-    </div>
 
-    <header class="dynamic-island-wrapper" id="navbar">
-        <div class="dynamic-island" id="dynamicIsland">
-            <a href="#hero" class="nav-logo" aria-label="Home">
-                <span class="island-status-dot"></span>
-                <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
-            </a>
-
-            <nav class="nav-menu">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
-                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-                    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                    <li><a href="#contributions" class="nav-link" data-section="contributions">Contributions</a></li>
-                    <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-                    <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-                    <li class="mobile-nav-cta">
-                        <button class="btn btn-sm btn-primary w-full nav-resume-btn">
-                            <i data-lucide="file-text"></i>
-                            <span>View Resume</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="mailto:sandeepmanchinasetti007@gmail.com" class="nav-email-pill" id="navEmailPill"
-                    title="Click to copy email">
-                    <i data-lucide="mail"></i>
-                </a>
-                <button class="cmd-trigger-btn" id="cmdTriggerBtn" title="Search commands (⌘K / Ctrl+K)">
-                    <i data-lucide="command"></i>
-                    <span class="cmd-key-hint">⌘K</span>
-                </button>
-                <button class="btn btn-sm btn-outline nav-resume-btn" id="headerResumeBtn">
-                    <i data-lucide="file-text"></i>
-                    <span>Resume</span>
-                </button>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+        <div class="hero-actions">
+          <a class="action action-primary" href="#work">
+            <span>Explore Selected Work</span>
+            <span class="arrow" aria-hidden="true">↓</span>
+          </a>
+          <a class="action action-secondary" href="sandy.pdf" target="_blank" rel="noopener">
+            <span>Curriculum Vitae</span>
+            <span class="external-icon" aria-hidden="true">↗</span>
+          </a>
+          <button class="action action-ghost" id="copyHeroEmailBtn" type="button" aria-label="Copy email address to clipboard">
+            <span class="btn-text">Copy Email</span>
+            <span class="btn-hint" aria-hidden="true">sandeepmanchinasetti007@gmail.com</span>
+          </button>
         </div>
-    </header>
-    <div class="nav-backdrop" id="navBackdrop"></div>
+      </div>
 
-    <section class="hero" id="hero">
+      <div class="hero-stamp" aria-label="Verified Code & Applied AI">
+        <svg viewBox="0 0 100 100" class="stamp-svg" aria-hidden="true">
+          <path id="stampPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+          <text font-size="10.5" letter-spacing="2">
+            <textPath href="#stampPath">OPEN TO ROLES • SHIP CODE • </textPath>
+          </text>
+        </svg>
+        <div class="stamp-center">2026</div>
+      </div>
+    </section>
 
+    <!-- CHAPTER 02: FIELD NOTES (SKILLS & ARCHITECTURE) -->
+    <section class="chapter chapter-paper profile" id="skills" data-section="skills" data-folio="02">
+      <header class="chapter-header reveal">
+        <p class="chapter-label">Chapter 02 — Field Notes</p>
+        <h2 class="chapter-title">Technical arsenal &amp;<br>foundational craft.</h2>
+        <p class="chapter-sub">
+          A balanced profile combining full-stack MERN architecture, machine-learning transfer pipelines, real-time vision algorithms, and security-minded protocols.
+        </p>
+      </header>
 
+      <div class="profile-layout">
+        <figure class="portrait-card reveal">
+          <div class="portrait-frame">
+            <img src="profile.jpg" alt="Sandeep Manchinasetti portrait" width="1103" height="1426" loading="lazy">
+            <div class="portrait-badge">Sandeep Manchinasetti</div>
+          </div>
+          <figcaption class="portrait-caption">
+            <strong>Sandeep Manchinasetti</strong><br>
+            B.Tech in Artificial Intelligence<br>
+            Pydah College of Engineering, Kakinada
+          </figcaption>
+        </figure>
 
-        <div class="purple-glow-center"></div>
-        <div class="purple-glow-bottom"></div>
+        <div class="field-notes-content reveal">
+          <p class="lead-quote">
+            "A well-engineered interface is meaningless without resilient backend architecture, just as sophisticated AI models are useless without clean, practical integration."
+          </p>
 
-        <div class="container hero-layout">
-
-            <div class="hero-left">
-                <span class="hero-subhead gs-fade-up">Hello! I'm</span>
-                <h1 class="hero-name-large gs-fade-up">Sandeep Manchinasetti</h1>
-                <div class="hero-role-rotator gs-fade-up">
-                    <span class="typewriter-text" id="typewriter"></span>
-                    <span class="typewriter-cursor">|</span>
+          <div class="notes-grid" aria-label="Core Competencies">
+            <article class="note-box">
+              <div class="note-num">01</div>
+              <div class="note-body">
+                <h3>Full-Stack Web Systems</h3>
+                <p>Architecting robust applications with React, Next.js, Node.js, Express, and MongoDB. Specialize in RESTful APIs, JWT role-based access control, responsive interfaces, and scalable database schemas.</p>
+                <div class="tech-pills">
+                  <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span>
                 </div>
-                <p class="hero-bio-short gs-fade-up">
-                    Crafting intelligent systems at the intersection of Artificial Intelligence, Cybersecurity, and
-                    Full-Stack Engineering.
+              </div>
+            </article>
+
+            <article class="note-box">
+              <div class="note-num">02</div>
+              <div class="note-body">
+                <h3>Applied Machine Learning</h3>
+                <p>Developing predictive models and deep neural nets with Python, TensorFlow, and scikit-learn. Hands-on experience implementing transfer learning (EfficientNetB0) for biomedical MRI scans and NLP feature classification.</p>
+                <div class="tech-pills">
+                  <span>Python</span><span>TensorFlow</span><span>Scikit-Learn</span><span>NLP</span><span>EfficientNet</span><span>Flask</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="note-box">
+              <div class="note-num">03</div>
+              <div class="note-body">
+                <h3>Computer Vision &amp; Spatial AI</h3>
+                <p>Building real-time perception workflows using OpenCV and MediaPipe: dynamic hand landmark tracking for sign language translation, facial verification pipelines, and geofenced biometric systems.</p>
+                <div class="tech-pills">
+                  <span>OpenCV</span><span>MediaPipe</span><span>CNN</span><span>Real-time Streams</span><span>Haar / Deep Face</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="note-box">
+              <div class="note-num">04</div>
+              <div class="note-body">
+                <h3>Security &amp; Problem Solving</h3>
+                <p>Defensive security mindset rooted in threat modeling, penetration testing simulations, and algorithmic problem-solving. Daily competitive coder with high consistency.</p>
+                <div class="tech-pills">
+                  <span>Threat Modeling</span><span>URL Lexical Analysis</span><span>Data Structures</span><span>Algorithms</span><span>Git</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 03: SELECTED WORK (CASE STUDIES) -->
+    <section class="chapter chapter-ink work" id="work" data-section="work" data-folio="03">
+      <header class="work-header reveal">
+        <div class="work-header-meta">
+          <p class="chapter-label">Chapter 03 — Engineering Ledger</p>
+          <h2 class="chapter-title">Selected projects<br>engineered for impact.</h2>
+        </div>
+        <p class="work-header-desc">
+          Every project is built to address a specific, measurable challenge—from end-to-end institutional workflow automation to medical AI classification and real-time accessibility translation.
+        </p>
+      </header>
+
+      <!-- Project Quick Filter / Index -->
+      <nav class="project-toc" aria-label="Quick jump to project dossier">
+        <span class="toc-title">Catalogue Index:</span>
+        <button type="button" class="toc-item is-active" data-target="project-college360">01. College360</button>
+        <button type="button" class="toc-item" data-target="project-nuroliq">02. Nuroliq AI</button>
+        <button type="button" class="toc-item" data-target="project-phishing">03. Phishing Shield</button>
+        <button type="button" class="toc-item" data-target="project-attendance">04. Vision Attendance</button>
+        <button type="button" class="toc-item" data-target="project-signtotext">05. Sign-to-Text</button>
+      </nav>
+
+      <div class="projects-dossier">
+        
+        <!-- PROJECT 01: College360 -->
+        <article class="project-entry" id="project-college360" data-project-id="project-college360">
+          <div class="project-entry-spine">
+            <span class="entry-index">01</span>
+          </div>
+          <div class="project-entry-content">
+            <div class="entry-head">
+              <span class="entry-category">Full-Stack Enterprise Platform</span>
+              <h3 class="entry-title">College360 — Comprehensive Campus Management System</h3>
+              <div class="entry-badge-wrap">
+                <span class="entry-badge badge-accent">🏆 CODESTORM Winner</span>
+              </div>
+            </div>
+            <p class="entry-summary">
+              A full-scale institutional operations engine unifying student attendance tracking, academic feedback, centralized records, and dynamic timetable generation under a unified, multi-tiered role-based access architecture.
+            </p>
+            <div class="entry-highlights">
+              <div class="highlight-item">
+                <strong>Core Challenge:</strong> Eliminating fragmented paper and spreadsheet workflows across departments with differing permission levels (Admins, Faculty, Students).
+              </div>
+              <div class="highlight-item">
+                <strong>Implementation:</strong> Built with MongoDB, Express.js, React, and Node.js. Integrated secure JWT-based authorization gates, REST endpoints for record CRUD, and an automated scheduling matrix.
+              </div>
+            </div>
+            <div class="entry-specs">
+              <div class="spec-col">
+                <span class="spec-label">Stack</span>
+                <span class="spec-value">React, Node.js, Express, MongoDB, JWT, REST</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">Status</span>
+                <span class="spec-value">Production Deployed &amp; Evaluated</span>
+              </div>
+            </div>
+            <div class="entry-links">
+              <a class="entry-cta entry-cta-primary" href="https://college360-ibj2.vercel.app/" target="_blank" rel="noopener">
+                <span>Launch Live Platform</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+              <a class="entry-cta entry-cta-ghost" href="https://github.com/sandeep2409-gitch/college360.git" target="_blank" rel="noopener">
+                <span>Inspect Repository</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: Nuroliq AI -->
+        <article class="project-entry" id="project-nuroliq" data-project-id="project-nuroliq">
+          <div class="project-entry-spine">
+            <span class="entry-index">02</span>
+          </div>
+          <div class="project-entry-content">
+            <div class="entry-head">
+              <span class="entry-category">Biomedical AI &amp; Diagnostics</span>
+              <h3 class="entry-title">Nuroliq AI — Deep Learning MRI Classification Engine</h3>
+              <div class="entry-badge-wrap">
+                <span class="entry-badge">Applied Deep Learning</span>
+              </div>
+            </div>
+            <p class="entry-summary">
+              A clinical decision-support web application that analyzes neuroimaging MRI scans for classification and tumor detection using deep transfer learning, serving instant confidence scorings through an asynchronous Flask API.
+            </p>
+            <div class="entry-highlights">
+              <div class="highlight-item">
+                <strong>Core Challenge:</strong> High computational requirements and risk of overfitting when training medical vision models on constrained clinical image datasets.
+              </div>
+              <div class="highlight-item">
+                <strong>Implementation:</strong> Leveraged <code>EfficientNetB0</code> transfer learning pretrained on ImageNet, fine-tuned on neuro-MRI scans with data augmentation pipelines, served via a lightweight Flask web interface.
+              </div>
+            </div>
+            <div class="entry-specs">
+              <div class="spec-col">
+                <span class="spec-label">Stack</span>
+                <span class="spec-value">Python, TensorFlow, EfficientNetB0, Flask, OpenCV</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">Domain</span>
+                <span class="spec-value">Computer Vision / Medical Imaging</span>
+              </div>
+            </div>
+            <div class="entry-links">
+              <a class="entry-cta entry-cta-ghost" href="https://github.com/sandeep2409-gitch" target="_blank" rel="noopener">
+                <span>View Engineering Source</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: Phishing Shield -->
+        <article class="project-entry" id="project-phishing" data-project-id="project-phishing">
+          <div class="project-entry-spine">
+            <span class="entry-index">03</span>
+          </div>
+          <div class="project-entry-content">
+            <div class="entry-head">
+              <span class="entry-category">Defensive Intelligence</span>
+              <h3 class="entry-title">ML Phishing Detection Suite &amp; Chrome Extension</h3>
+              <div class="entry-badge-wrap">
+                <span class="entry-badge">Security &amp; Machine Learning</span>
+              </div>
+            </div>
+            <p class="entry-summary">
+              An intelligent URL classification pipeline and browser extension that performs real-time lexical, entropy, and structural analysis to detect malicious zero-day phishing sites before the user exposes credentials.
+            </p>
+            <div class="entry-highlights">
+              <div class="highlight-item">
+                <strong>Core Challenge:</strong> Traditional blocklists fail against fast-flux domains and ephemeral phishing URLs generated in active cyber campaigns.
+              </div>
+              <div class="highlight-item">
+                <strong>Implementation:</strong> Extracted 30+ lexical, domain-age, and protocol features from over 100,000 URL samples. Trained supervised classification trees in scikit-learn, paired with a lightweight Chrome Extension providing instantaneous browser warnings.
+              </div>
+            </div>
+            <div class="entry-specs">
+              <div class="spec-col">
+                <span class="spec-label">Stack</span>
+                <span class="spec-value">Python, Scikit-learn, NLP, Flask, Chrome Extension V3</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">Focus</span>
+                <span class="spec-value">Heuristic &amp; ML Threat Defense</span>
+              </div>
+            </div>
+            <div class="entry-links">
+              <a class="entry-cta entry-cta-ghost" href="https://github.com/sandeep2409-gitch/phishing-detection-system-using-ml.git" target="_blank" rel="noopener">
+                <span>Inspect Repository</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: Facial Attendance System -->
+        <article class="project-entry" id="project-attendance" data-project-id="project-attendance">
+          <div class="project-entry-spine">
+            <span class="entry-index">04</span>
+          </div>
+          <div class="project-entry-content">
+            <div class="entry-head">
+              <span class="entry-category">Biometrics &amp; Geolocation</span>
+              <h3 class="entry-title">Vision Attendance System V2 (Face + Geofence)</h3>
+              <div class="entry-badge-wrap">
+                <span class="entry-badge">Computer Vision</span>
+              </div>
+            </div>
+            <p class="entry-summary">
+              A touchless enterprise attendance platform combining real-time camera face verification, device geolocation perimeter checks, and timed QR token fallback authentication to prevent spoofing and proxy logging.
+            </p>
+            <div class="entry-highlights">
+              <div class="highlight-item">
+                <strong>Core Challenge:</strong> Preventing attendance proxy fraud ("buddy punching") and photo-based spoof attacks in remote or hybrid institutional setups.
+              </div>
+              <div class="highlight-item">
+                <strong>Implementation:</strong> Integrated OpenCV face detection algorithms with deep embeddings comparison, backed by GPS coordinates validation against pre-registered campus boundaries.
+              </div>
+            </div>
+            <div class="entry-specs">
+              <div class="spec-col">
+                <span class="spec-label">Stack</span>
+                <span class="spec-value">Python, OpenCV, Deep Learning, Flask, SQLite</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">Security</span>
+                <span class="spec-value">Geofence Validation + Biometric Match</span>
+              </div>
+            </div>
+            <div class="entry-links">
+              <a class="entry-cta entry-cta-ghost" href="https://github.com/sandeep2409-gitch/FACE-RECOGNITION-SYSTEM-V2.git" target="_blank" rel="noopener">
+                <span>Inspect Repository</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 05: Sign to Text -->
+        <article class="project-entry" id="project-signtotext" data-project-id="project-signtotext">
+          <div class="project-entry-spine">
+            <span class="entry-index">05</span>
+          </div>
+          <div class="project-entry-content">
+            <div class="entry-head">
+              <span class="entry-category">Human-Computer Interaction</span>
+              <h3 class="entry-title">Real-Time Sign Language to Text Converter</h3>
+              <div class="entry-badge-wrap">
+                <span class="entry-badge">Accessibility AI</span>
+              </div>
+            </div>
+            <p class="entry-summary">
+              An assistive computer-vision application translating American Sign Language (ASL) finger-spelling gestures into readable English text in real time, bridging communication barriers for the speech- and hearing-impaired.
+            </p>
+            <div class="entry-highlights">
+              <div class="highlight-item">
+                <strong>Core Challenge:</strong> Complex spatial variations, hand rotations, lighting inconsistencies, and motion blur during live video capture.
+              </div>
+              <div class="highlight-item">
+                <strong>Implementation:</strong> Utilized MediaPipe Hands for 21 3D coordinate landmark tracking per frame, feeding normalized coordinate vectors into a convolutional classification network for rapid character inference.
+              </div>
+            </div>
+            <div class="entry-specs">
+              <div class="spec-col">
+                <span class="spec-label">Stack</span>
+                <span class="spec-value">Python, MediaPipe, OpenCV, TensorFlow, CNN</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-label">Objective</span>
+                <span class="spec-value">Real-Time Accessibility Tech</span>
+              </div>
+            </div>
+            <div class="entry-links">
+              <a class="entry-cta entry-cta-ghost" href="https://github.com/sandeep2409-gitch/SIGN-TO-TEXT-CONVERT.git" target="_blank" rel="noopener">
+                <span>Inspect Repository</span>
+                <span class="arrow-ext" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CHAPTER 04: CAREER DESK (EXPERIENCE & ACHIEVEMENTS) -->
+    <section class="chapter chapter-paper experience" id="experience" data-section="experience" data-folio="04">
+      <header class="chapter-header reveal">
+        <p class="chapter-label">Chapter 04 — Career Desk</p>
+        <h2 class="chapter-title">Practical tenure &amp;<br>verifiable milestones.</h2>
+        <p class="chapter-sub">
+          Hands-on developer apprenticeships combined with consistent competitive algorithmic execution and hackathon podium finishes.
+        </p>
+      </header>
+
+      <div class="career-layout">
+        <!-- Professional Work Timeline -->
+        <div class="timeline-wrapper reveal">
+          <h3 class="desk-subhead">Internship &amp; Applied Work</h3>
+          <ol class="editorial-timeline">
+            <li class="timeline-row">
+              <div class="row-meta">
+                <span class="row-period">Jun 2026 — Present</span>
+                <span class="row-type">Internship</span>
+              </div>
+              <div class="row-main">
+                <h4 class="row-role">MERN Stack Developer Intern</h4>
+                <p class="row-org">Webstack Academy (WSA) · Remote</p>
+                <p class="row-desc">
+                  Building scalable full-stack web applications with MongoDB, Express.js, React, and Node.js. Designing RESTful API architectures, integrating secure authentication middleware, and ensuring cross-device UI optimization.
                 </p>
-                <div class="hero-cta-group gs-fade-up">
-                    <a href="#projects" class="btn btn-primary btn-glow">
-                        <span>View Featured Work</span>
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <span>Get in Touch</span>
-                    </a>
-                </div>
-            </div>
+              </div>
+            </li>
 
-            <div class="hero-right">
-                <span class="hero-taghead gs-fade-up">A Creative</span>
-                <h2 class="hero-large-gradient gs-fade-up">
-                    AI ENGINEER<br>
-                    <span>&amp; DEVELOPER</span>
-                </h2>
-                <div class="hero-badge-pill gs-fade-up">
-                    <span class="pulse-dot"></span>
-                    <span>Building the Future with Code</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="bottom-right-resume">
-            <button class="btn-minimal-resume" id="heroResumeBtn">
-                <span>RESUME</span>
-                <i data-lucide="arrow-up-right"></i>
-            </button>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-                <p class="section-subtitle">A glimpse into my background, academic journey, and engineering mindset.</p>
-            </div>
-
-            <div class="bento-grid">
-
-                <div class="bento-card bento-profile reveal-up">
-                    <div class="bento-profile-wrapper">
-                        <div class="profile-image-container" id="pfpContainer">
-                            <div class="profile-avatar-ring"></div>
-                            <div class="cyber-developer-boy" id="cyberAvatar">
-                                <img src="profile.jpg" alt="Sandeep Manchinasetti" class="profile-avatar-img">
-                            </div>
-                            <span class="status-badge" title="Online & Building"></span>
-                        </div>
-                        <div class="profile-info">
-                            <div class="profile-tag">AI Security Engineer & Full Stack Dev</div>
-                            <h3 class="profile-name">Sandeep Manchinasetti</h3>
-                            <p class="profile-bio">
-                                B.Tech 3rd Year Computer Science student deeply passionate about engineering robust web
-                                systems, Machine Learning algorithms, Computer Vision pipelines, and security research.
-                            </p>
-                            <div class="profile-meta">
-                                <div class="meta-item"><i data-lucide="map-pin"></i> India</div>
-                                <div class="meta-item"><i data-lucide="graduation-cap"></i> B.Tech 3rd Year</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-education reveal-up">
-                    <div class="bento-header">
-                        <div class="bento-icon"><i data-lucide="graduation-cap"></i></div>
-                        <span class="bento-label">Education</span>
-                    </div>
-                    <h4 class="bento-title">Bachelor of Technology</h4>
-                    <p class="bento-desc">Focused on Computer Science, AI, Web Systems, Data Structures, and Algorithmic
-                        Optimization.</p>
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <strong>B.Tech (Undergrad)</strong>
-                            <span>3rd Year Active Student</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-focus reveal-up">
-                    <div class="bento-header">
-                        <div class="bento-icon"><i data-lucide="sparkles"></i></div>
-                        <span class="bento-label">Core Philosophy</span>
-                    </div>
-                    <h4 class="bento-title">Synergy of AI & Web Tech</h4>
-                    <p class="bento-desc">Creating scalable, beautiful web platforms powered by behind-the-scenes neural
-                        networks, computer vision, and machine learning models.</p>
-                    <div class="focus-pills">
-                        <span class="pill"><i data-lucide="shield-check"></i> Cyber Security</span>
-                        <span class="pill"><i data-lucide="brain"></i> Deep Learning</span>
-                        <span class="pill"><i data-lucide="eye"></i> Computer Vision</span>
-                        <span class="pill"><i data-lucide="layout"></i> Responsive UI</span>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-code reveal-up">
-                    <div class="terminal-bar">
-                        <div class="terminal-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <span class="terminal-title">sandeep_config.ts</span>
-                    </div>
-                    <pre class="terminal-body"><code><span class="token-keyword">export const</span> <span class="token-class">engineer</span> = {
-  name: <span class="token-string">"Sandeep Manchinasetti"</span>,
-  year: <span class="token-string">"B.Tech 3rd Year"</span>,
-  focus: [<span class="token-string">"AI"</span>, <span class="token-string">"Cyber Security"</span>, <span class="token-string">"Full Stack"</span>],
-  passion: () => <span class="token-string">"Building award-winning digital experiences"</span>
-};</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
-                <p class="section-subtitle">Technologies, frameworks, and AI tools I work with daily.</p>
-            </div>
-
-            <div class="filter-tabs reveal-up">
-                <button class="filter-btn active" data-filter="all">All Skills</button>
-                <button class="filter-btn" data-filter="languages">Languages & Core</button>
-                <button class="filter-btn" data-filter="web">Full-Stack Web</button>
-                <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
-            </div>
-
-            <div class="skills-grid" id="skillsGrid">
-
-                <div class="skill-card reveal-up" data-category="languages ai">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #a855f7">
-                            <i data-lucide="terminal"></i>
-                        </div>
-                        <span class="skill-badge">Advanced</span>
-                    </div>
-                    <h3 class="skill-name">Python</h3>
-                    <p class="skill-desc">ML Pipelines, Scikit-learn, OpenCV, TensorFlow, Flask, Data Analysis.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="92%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card reveal-up" data-category="web languages">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #c084fc">
-                            <i data-lucide="server"></i>
-                        </div>
-                        <span class="skill-badge">Advanced</span>
-                    </div>
-                    <h3 class="skill-name">Node.js & Express</h3>
-                    <p class="skill-desc">REST API Architecture, JWT Auth, Middleware, MongoDB database schemas.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="86%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card reveal-up" data-category="web">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #61DAFB">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <span class="skill-badge">Advanced</span>
-                    </div>
-                    <h3 class="skill-name">React.js & Three.js</h3>
-                    <p class="skill-desc">Component-driven UI, WebGL 3D rendering, state management, modern single-page
-                        apps.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="84%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card reveal-up" data-category="ai">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #ff2a85">
-                            <i data-lucide="brain"></i>
-                        </div>
-                        <span class="skill-badge">Advanced</span>
-                    </div>
-                    <h3 class="skill-name">AI & Security Engineering</h3>
-                    <p class="skill-desc">Phishing detection algorithms, classification models, CNNs, threat analytics.
-                    </p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="88%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card reveal-up" data-category="ai">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #00e5ff">
-                            <i data-lucide="scan-face"></i>
-                        </div>
-                        <span class="skill-badge">Advanced</span>
-                    </div>
-                    <h3 class="skill-name">Computer Vision</h3>
-                    <p class="skill-desc">OpenCV image processing, facial recognition pipelines, MediaPipe gesture
-                        tracking.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card reveal-up" data-category="web languages">
-                    <div class="skill-top">
-                        <div class="skill-icon-box" style="--icon-accent: #e34f26">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                        <span class="skill-badge">Expert</span>
-                    </div>
-                    <h3 class="skill-name">HTML5 & CSS3</h3>
-                    <p class="skill-desc">Modern glassmorphism UI, CSS Grid, Flexbox, Animations, Responsive layouts.
-                    </p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="95%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills-cloud-wrapper reveal-up">
-                <h3 class="cloud-title"><i data-lucide="cpu"></i> Technologies & Tools Cloud</h3>
-                <div class="cloud-tags">
-                    <span class="cloud-tag">Scikit-Learn</span>
-                    <span class="cloud-tag">MediaPipe</span>
-                    <span class="cloud-tag">TensorFlow</span>
-                    <span class="cloud-tag">Keras</span>
-                    <span class="cloud-tag">OpenCV</span>
-                    <span class="cloud-tag">NumPy</span>
-                    <span class="cloud-tag">Pandas</span>
-                    <span class="cloud-tag">Flask</span>
-                    <span class="cloud-tag">MongoDB</span>
-                    <span class="cloud-tag">Three.js</span>
-                    <span class="cloud-tag">GSAP</span>
-                    <span class="cloud-tag">Git & GitHub</span>
-                    <span class="cloud-tag">RESTful APIs</span>
-                    <span class="cloud-tag">JWT</span>
-                    <span class="cloud-tag">Linux</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-                <p class="section-subtitle">Real-world applications spanning Full-Stack Web Development, AI/ML, and
-                    Computer Vision.</p>
-            </div>
-
-            <div class="filter-tabs reveal-up">
-                <button class="project-filter-btn active" data-pfilter="all">All Projects</button>
-                <button class="project-filter-btn" data-pfilter="fullstack">Full-Stack Web</button>
-                <button class="project-filter-btn" data-pfilter="ai-security">AI & Security</button>
-                <button class="project-filter-btn" data-pfilter="vision">Computer Vision</button>
-            </div>
-
-            <div class="projects-grid" id="projectsGrid">
-
-                <article class="project-card reveal-up" data-pcat="fullstack">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="building-2"></i> Full-Stack Web</div>
-                        <span class="project-num">01</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Campus Management System (College360)</h3>
-                        <p class="project-description">
-                            Comprehensive platform for campus administration featuring attendance tracking, student
-                            databases, feedback loops, and timetable scheduling with role-based JWT access.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">JWT</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch/college360.git" target="_blank"
-                                class="btn-project-link" title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                            <a href="https://college360-ibj2.vercel.app/" target="_blank"
-                                class="btn-project-link primary" title="Live Preview">
-                                <i data-lucide="external-link"></i> Live Demo
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="college360">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card reveal-up" data-pcat="ai-security">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="shield-alert"></i> AI & Cyber Security</div>
-                        <span class="project-num">02</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">ML Phishing Site Detector</h3>
-                        <p class="project-description">
-                            Machine learning system analyzing URL structures, lexical patterns, and security metrics in
-                            real-time to identify malicious phishing websites and alert users.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-Learn</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Flask</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch/phishing-detection-system-using-ml.git"
-                                target="_blank" class="btn-project-link" title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="phishing">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card reveal-up" data-pcat="vision">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="scan-face"></i> Computer Vision</div>
-                        <span class="project-num">03</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Facial Recognition Attendance System</h3>
-                        <p class="project-description">
-                            Automated attendance tracking combining real-time face detection algorithms, GPS geolocation
-                            verification, and fallback QR authentication for high security.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">Deep Learning</span>
-                            <span class="tech-tag">Flask</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch/FACE-RECOGNITION-SYSTEM-V2.git"
-                                target="_blank" class="btn-project-link" title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="facerecog">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card reveal-up" data-pcat="vision">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="hand"></i> AI & Accessibility</div>
-                        <span class="project-num">04</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Sign Language to Text Converter</h3>
-                        <p class="project-description">
-                            Real-time camera pipeline translating sign language hand gestures into readable text using
-                            computer vision hand-tracking and Convolutional Neural Networks.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">MediaPipe</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">CNN</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch/SIGN-TO-TEXT-CONVERT.git" target="_blank"
-                                class="btn-project-link" title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="signtotext">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card reveal-up" data-pcat="ai-security">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="brain"></i> Medical AI</div>
-                        <span class="project-num">05</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">AI Brain Tumor Detector</h3>
-                        <p class="project-description">
-                            Deep Learning model trained on MRI neuro-imaging datasets to detect, locate, and classify
-                            brain tumors with high precision to assist early diagnostics.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Keras</span>
-                            <span class="tech-tag">CNN</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch" target="_blank" class="btn-project-link"
-                                title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="braintumor">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card reveal-up" data-pcat="fullstack">
-                    <div class="project-card-header">
-                        <div class="project-type-tag"><i data-lucide="map"></i> Web App</div>
-                        <span class="project-num">06</span>
-                    </div>
-                    <div class="project-card-body">
-                        <h3 class="project-title">Village Explorer Platform</h3>
-                        <p class="project-description">
-                            Interactive digital mapping and cultural portal showcasing rural resources, media galleries,
-                            maps, and community information systems.
-                        </p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">HTML5/CSS3</span>
-                            <span class="tech-tag">REST API</span>
-                            <span class="tech-tag">Maps</span>
-                        </div>
-                    </div>
-                    <div class="project-card-footer">
-                        <div class="project-links">
-                            <a href="https://github.com/sandeep2409-gitch" target="_blank" class="btn-project-link"
-                                title="GitHub Repository">
-                                <i data-lucide="github"></i> Code
-                            </a>
-                        </div>
-                        <button class="btn-quick-view" data-project="village">
-                            <i data-lucide="eye"></i> Details
-                        </button>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Git Contributions Section -->
-    <section class="contributions" id="contributions">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <h2 class="section-title">Git <span class="gradient-text">Contributions</span></h2>
-                <p class="section-subtitle">Real-time open source activity, code commits, and repository metrics for
-                    Sandeep Manchinasetti.</p>
-            </div>
-
-            <div class="contributions-grid reveal-up">
-                <!-- Main Contribution Card -->
-                <div class="bento-card contribution-card">
-                    <div class="contribution-header">
-                        <div class="user-info">
-                            <i data-lucide="folder-git-2" class="git-icon"></i>
-                            <div>
-                                <h3>@sandeep2409-gitch</h3>
-                                <p class="sub-text">GitHub Contribution Matrix & Code Activity</p>
-                            </div>
-                        </div>
-                        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="btn btn-sm btn-outline"
-                            rel="noopener">
-                            <i data-lucide="github"></i>
-                            <span>View Profile</span>
-                            <i data-lucide="external-link"></i>
-                        </a>
-                    </div>
-
-                    <!-- Single GitHub Contribution Chart -->
-                    <div class="heatmap-wrapper">
-                        <img src="https://ghchart.rshah.org/a855f7/sandeep2409-gitch"
-                            alt="Sandeep Manchinasetti GitHub Contribution Chart" class="gh-chart-img" loading="lazy">
-                    </div>
-
-                    <div class="heatmap-legend">
-                        <span class="legend-label">Less</span>
-                        <div class="legend-cells">
-                            <span class="legend-cell level-0"></span>
-                            <span class="legend-cell level-1"></span>
-                            <span class="legend-cell level-2"></span>
-                            <span class="legend-cell level-3"></span>
-                            <span class="legend-cell level-4"></span>
-                        </div>
-                        <span class="legend-label">More</span>
-                    </div>
-                </div>
-
-                <!-- GitHub Metric Cards -->
-                <div class="contribution-stats-row">
-                    <div class="bento-card stat-mini-card">
-                        <div class="stat-icon-box">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Total Commits & Activity</span>
-                        </div>
-                    </div>
-
-                    <div class="bento-card stat-mini-card">
-                        <div class="stat-icon-box">
-                            <i data-lucide="folder-git-2"></i>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Public Repositories</span>
-                        </div>
-                    </div>
-
-                    <div class="bento-card stat-mini-card">
-                        <div class="stat-icon-box">
-                            <i data-lucide="sparkles"></i>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Open Source Dedication</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">My <span class="gradient-text">Experience</span></h2>
-                <p class="section-subtitle">Highlights of projects, engineering roles, and academic endeavors.</p>
-            </div>
-
-            <div class="timeline-wrapper">
-
-                <div class="timeline-card reveal-up">
-                    <div class="timeline-badge"><i data-lucide="layers"></i></div>
-                    <div class="timeline-body">
-                        <span class="timeline-date">Jun 2026 - Present &middot; Remote</span>
-                        <h3 class="timeline-title">MERN Stack Developer Intern</h3>
-                        <div class="company-tag"><i data-lucide="building-2"></i> Webstack Academy (WSA)</div>
-                        <p class="timeline-desc">
-                            Building scalable full-stack web applications using MongoDB, Express.js, React.js, and
-                            Node.js with responsive user interfaces and RESTful APIs.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-card reveal-up">
-                    <div class="timeline-badge"><i data-lucide="layout"></i></div>
-                    <div class="timeline-body">
-                        <span class="timeline-date">Jun 2026 - Present &middot; Remote</span>
-                        <h3 class="timeline-title">Professional UI/UX Design & Web Prototyping Intern</h3>
-                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
-                        <p class="timeline-desc">
-                            Crafting high-fidelity UI/UX prototypes, wireframes, and design systems for web interfaces,
-                            focusing on user accessibility and interaction design.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">UI/UX Design</span>
-                            <span class="tech-tag">Web Prototyping</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-card reveal-up">
-                    <div class="timeline-badge"><i data-lucide="terminal"></i></div>
-                    <div class="timeline-body">
-                        <span class="timeline-date">Mar 2026 - Jun 2026 &middot; 4 mos &middot; Remote</span>
-                        <h3 class="timeline-title">Python Full Stack Developer Intern</h3>
-                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
-                        <p class="timeline-desc">
-                            Engineered full-stack Python web solutions, backend API routing, database models, and
-                            dynamic server-side rendering pipelines.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Full Stack</span>
-                            <span class="tech-tag">REST APIs</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-card reveal-up">
-                    <div class="timeline-badge"><i data-lucide="shield-check"></i></div>
-                    <div class="timeline-body">
-                        <span class="timeline-date">Jan 2026 - Mar 2026 &middot; 3 mos &middot; Remote</span>
-                        <h3 class="timeline-title">Ethical Hacker Intern</h3>
-                        <div class="company-tag"><i data-lucide="award"></i> EduSkills Foundation®</div>
-                        <p class="timeline-desc">
-                            Conducted cybersecurity vulnerability assessments, threat analysis, network security audits,
-                            and penetration testing simulations.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="tech-tag">Ethical Hacking</span>
-                            <span class="tech-tag">Cyber Security</span>
-                            <span class="tech-tag">Vulnerability Assessment</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hackathons" id="hackathons">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">Hackathons & <span class="gradient-text">Challenges</span></h2>
-                <p class="section-subtitle">Building innovative prototypes under intense sprint deadlines.</p>
-            </div>
-
-            <div class="hackathons-grid">
-
-                <div class="hackathon-card reveal-up">
-                    <div class="hackathon-icon" style="--icon-accent: #facc15;"><i data-lucide="trophy"></i></div>
-                    <div class="award-badge-pill"><i data-lucide="award"></i> Hackathon Winner</div>
-                    <h3 class="hackathon-title">CODESTORM College Hackathon</h3>
-                    <p class="hackathon-desc">
-                        Recognized at CODESTORM for presenting <strong>College360</strong> — a centralized
-                        MERN-stack campus management platform with real-time attendance tracking, feedback systems, and
-                        JWT security.
-                    </p>
-                    <div class="hackathon-tags">
-                        <span class="tech-tag">CODESTORM</span>
-                        <span class="tech-tag">College360</span>
-                        <span class="tech-tag">MERN Stack</span>
-                    </div>
-                </div>
-
-                <div class="hackathon-card reveal-up">
-                    <div class="hackathon-icon" style="--icon-accent: #a855f7;"><i data-lucide="award"></i></div>
-                    <div class="award-badge-pill gold"><i data-lucide="trophy"></i> Competition Winner</div>
-                    <h3 class="hackathon-title">Coding & Debugging Competition</h3>
-                    <p class="hackathon-desc">
-                        Achieved top honors by diagnosing complex software bugs, optimizing data structure efficiency,
-                        and solving competitive programming challenges under strict timer constraints.
-                    </p>
-                    <div class="hackathon-tags">
-                        <span class="tech-tag">Debugging</span>
-                        <span class="tech-tag">Algorithms</span>
-                        <span class="tech-tag">Problem Solving</span>
-                    </div>
-                </div>
-
-                <div class="hackathon-card reveal-up">
-                    <div class="hackathon-icon"><i data-lucide="shield-check"></i></div>
-                    <h3 class="hackathon-title">Cyber Security & AI Threat Challenge</h3>
-                    <p class="hackathon-desc">Developed an automated URL threat analyzer trained on real-world phishing
-                        datasets to detect malicious web domains instantly.</p>
-                    <div class="hackathon-tags">
-                        <span class="tech-tag">Scikit-Learn</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Security</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="achievements" id="achievements">
-        <div class="container">
-            <div class="section-header reveal-up">
-
-                <h2 class="section-title">Key <span class="gradient-text">Achievements</span></h2>
-                <p class="section-subtitle">Academic milestones, open-source projects, and technical honors.</p>
-            </div>
-
-            <div class="achievements-grid">
-                <div class="achievement-card reveal-up">
-                    <div class="achievement-icon"><i data-lucide="award"></i></div>
-                    <h3 class="achievement-title">Top Academic Performance</h3>
-                    <p class="achievement-desc">Maintaining high academic standing in B.Tech Computer Science & AI
-                        coursework.</p>
-                </div>
-
-                <div class="achievement-card reveal-up">
-                    <div class="achievement-icon"><i data-lucide="github"></i></div>
-                    <h3 class="achievement-title">Active Open Source Repos</h3>
-                    <p class="achievement-desc">Published multiple public repositories covering Full-Stack Apps, ML
-                        models, and CV systems.</p>
-                </div>
-
-                <div class="achievement-card reveal-up">
-                    <div class="achievement-icon"><i data-lucide="brain"></i></div>
-                    <h3 class="achievement-title">Medical AI Model Training</h3>
-                    <p class="achievement-desc">Successfully trained CNN deep learning models for high-accuracy brain
-                        MRI tumor classification.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="modal-backdrop" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
-            <div class="modal-header-gradient" id="modalHeaderGradient"></div>
-            <div class="modal-body">
-                <span class="modal-category" id="modalCategory">Full Stack</span>
-                <h3 class="modal-title" id="modalTitle">Project Title</h3>
-                <p class="modal-desc" id="modalDesc">Detailed description goes here...</p>
-
-                <div class="modal-section-title"><i data-lucide="layers"></i> Tech Stack</div>
-                <div class="modal-tech-list" id="modalTechList"></div>
-
-                <div class="modal-section-title"><i data-lucide="list-checks"></i> Key Highlights & Features</div>
-                <ul class="modal-features-list" id="modalFeaturesList"></ul>
-
-                <div class="modal-actions">
-                    <a href="#" target="_blank" id="modalGithubBtn" class="btn btn-outline">
-                        <i data-lucide="github"></i> <span>View Code</span>
-                    </a>
-                    <a href="#" target="_blank" id="modalDemoBtn" class="btn btn-primary">
-                        <i data-lucide="external-link"></i> <span>Live Demo</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-backdrop" id="resumeModal">
-        <div class="modal-content resume-modal-content">
-            <div class="resume-modal-header">
-                <div class="resume-modal-title-group">
-                    <i data-lucide="file-text"></i>
-                    <div>
-                        <h3 class="resume-modal-title">Sandeep Manchinasetti — Resume</h3>
-                        <span class="resume-modal-subtitle"><i data-lucide="shield-check"></i> Protected View (View
-                            Only)</span>
-                    </div>
-                </div>
-                <button class="modal-close" id="resumeModalCloseBtn" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="pdf-viewer-container" oncontextmenu="return false;">
-                <iframe src="sandy.pdf#toolbar=0&navpanes=0&scrollbar=0" class="pdf-viewer-iframe"
-                    title="Sandeep Manchinasetti Resume" loading="lazy"></iframe>
-                <div class="pdf-protected-overlay"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">&lt;contact&gt;</span>
-                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
-                <p class="section-subtitle">Interested in collaborating or discussing an opportunity? Drop a message!
+            <li class="timeline-row">
+              <div class="row-meta">
+                <span class="row-period">Jun 2026 — Present</span>
+                <span class="row-type">Internship</span>
+              </div>
+              <div class="row-main">
+                <h4 class="row-role">UI/UX Design &amp; Web Prototyping Intern</h4>
+                <p class="row-org">EduSkills Foundation · Remote</p>
+                <p class="row-desc">
+                  Creating responsive interface wireframes, component libraries, and interactive design systems. Conducting accessibility usability testing and translating Figma prototypes to standards-compliant code.
                 </p>
-            </div>
+              </div>
+            </li>
 
-            <div class="contact-grid">
+            <li class="timeline-row">
+              <div class="row-meta">
+                <span class="row-period">Mar 2026 — Jun 2026</span>
+                <span class="row-type">Internship</span>
+              </div>
+              <div class="row-main">
+                <h4 class="row-role">Python Full Stack Developer Intern</h4>
+                <p class="row-org">EduSkills Foundation · Remote</p>
+                <p class="row-desc">
+                  Engineered backend routing, automated data processing scripts, and database relational models using Python and Flask. Integrated front-end templates with asynchronous backend services.
+                </p>
+              </div>
+            </li>
 
-                <div class="contact-info reveal-up">
-                    <h3 class="contact-heading">Let's Connect & Collaborate</h3>
-                    <p class="contact-text">
-                        I am actively seeking internship opportunities, freelance engineering projects, and research
-                        collaborations in Full-Stack Development and AI/ML.
-                    </p>
-
-                    <div class="contact-cards-list">
-                        <div class="contact-chip" id="copyEmailChip" title="Click to copy email">
-                            <div class="chip-icon"><i data-lucide="mail"></i></div>
-                            <div class="chip-details">
-                                <span class="chip-label">Email Address (Click to copy)</span>
-                                <span class="chip-value">sandeepmanchinasetti007@gmail.com</span>
-                            </div>
-                            <i data-lucide="copy" class="chip-action-icon"></i>
-                        </div>
-
-                        <a href="https://github.com/sandeep2409-gitch" target="_blank" class="contact-chip">
-                            <div class="chip-icon"><i data-lucide="github"></i></div>
-                            <div class="chip-details">
-                                <span class="chip-label">GitHub Profile</span>
-                                <span class="chip-value">github.com/sandeep2409-gitch</span>
-                            </div>
-                            <i data-lucide="external-link" class="chip-action-icon"></i>
-                        </a>
-
-                        <a href="https://x.com/lovly_pandu07" target="_blank" class="contact-chip">
-                            <div class="chip-icon"><i data-lucide="twitter"></i></div>
-                            <div class="chip-details">
-                                <span class="chip-label">Twitter / X</span>
-                                <span class="chip-value">x.com/lovly_pandu07</span>
-                            </div>
-                            <i data-lucide="external-link" class="chip-action-icon"></i>
-                        </a>
-
-                        <div class="contact-chip">
-                            <div class="chip-icon"><i data-lucide="map-pin"></i></div>
-                            <div class="chip-details">
-                                <span class="chip-label">Location</span>
-                                <span class="chip-value">India</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-code-card">
-                        <div class="card-bar">
-                            <span class="bar-dot red"></span>
-                            <span class="bar-dot yellow"></span>
-                            <span class="bar-dot green"></span>
-                            <span class="bar-title">contact_dev.ts</span>
-                            <button class="code-copy-btn" id="copyCodeBtn" title="Copy code snippet">
-                                <i data-lucide="copy"></i>
-                            </button>
-                        </div>
-                        <pre class="card-code"><code id="codeSnippet"><span class="code-keyword">const</span> <span class="code-var">sandeep</span> = {
-  <span class="code-prop">name</span>: <span class="code-string">"Sandeep Manchinasetti"</span>,
-  <span class="code-prop">email</span>: <span class="code-string">"sandeepmanchinasetti007@gmail.com"</span>,
-  <span class="code-prop">role</span>: <span class="code-string">"AI Security Engineer & Full Stack Dev"</span>,
-  <span class="code-prop">openTo</span>: [<span class="code-string">"Internships"</span>, <span class="code-string">"Full-time"</span>, <span class="code-string">"Projects"</span>],
-  <span class="code-func">hireable</span>: () =&gt; <span class="code-bool">true</span>
-};</code></pre>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper reveal-up">
-                    <form class="contact-form" id="contactForm"
-                        action="https://formsubmit.co/sandeepmanchinasetti007@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New 3D Portfolio Contact Message!">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="text" name="_honey" style="display:none">
-
-                        <h3 class="form-title">Send a Direct Message</h3>
-
-                        <div class="form-group">
-                            <input type="text" name="name" id="contactName" class="form-input" placeholder=" " required>
-                            <label for="contactName" class="form-label">Your Name</label>
-                            <div class="form-line"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" name="email" id="contactEmail" class="form-input" placeholder=" "
-                                required>
-                            <label for="contactEmail" class="form-label">Your Email</label>
-                            <div class="form-line"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" name="subject" id="contactSubject" class="form-input" placeholder=" ">
-                            <label for="contactSubject" class="form-label">Subject</label>
-                            <div class="form-line"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea name="message" id="contactMessage" class="form-input form-textarea"
-                                placeholder=" " required rows="5"></textarea>
-                            <label for="contactMessage" class="form-label">Your Message</label>
-                            <div class="form-line"></div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit btn-glow">
-                            <span>Send Message</span>
-                            <i data-lucide="send"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+            <li class="timeline-row">
+              <div class="row-meta">
+                <span class="row-period">Jan 2026 — Mar 2026</span>
+                <span class="row-type">Internship</span>
+              </div>
+              <div class="row-main">
+                <h4 class="row-role">Ethical Hacker Intern</h4>
+                <p class="row-org">EduSkills Foundation · Remote</p>
+                <p class="row-desc">
+                  Conducted network vulnerability assessments, penetration testing simulations, and web application security audits following OWASP Top 10 guidelines to pinpoint configuration leaks and injection flaws.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
+
+        <!-- Right Side: Honors & Problem Solving Ledger -->
+        <aside class="recognition-panel reveal">
+          <h3 class="desk-subhead">Competitive Coding &amp; Honors</h3>
+          
+          <div class="recognition-box">
+            <div class="recog-stat-row">
+              <div class="recog-stat">
+                <span class="stat-number">#1</span>
+                <span class="stat-label">Institute Rank (GFG)</span>
+              </div>
+              <div class="recog-stat">
+                <span class="stat-number">146+</span>
+                <span class="stat-label">Problems Solved</span>
+              </div>
+              <div class="recog-stat">
+                <span class="stat-number">521</span>
+                <span class="stat-label">Coding Score</span>
+              </div>
+            </div>
+            
+            <ul class="recognition-list">
+              <li>
+                <strong>GeeksforGeeks Institute Rank #1:</strong> Maintained a 42-day record problem streak with 106 Problem-of-the-Day (POTD) solutions delivered consistently.
+              </li>
+              <li>
+                <strong>LeetCode Problem Solving:</strong> 42+ algorithmic challenges conquered across Easy, Medium, and Hard domains (Arrays, Graphs, Dynamic Programming).
+              </li>
+              <li>
+                <strong>CODESTORM S2 Hackathon Winner:</strong> Claimed 2nd Place / Category Winner for College360 institutional architecture.
+              </li>
+              <li>
+                <strong>SRUJANA 2K26 Hackathon:</strong> Built a direct-to-consumer digital farmer enablement platform with team <em>Cypher Squad</em>.
+              </li>
+              <li>
+                <strong>Inter-College Debugging Champion:</strong> 1st place in code vulnerability identification and rapid algorithmic bug fixing.
+              </li>
+            </ul>
+          </div>
+
+          <div class="education-box">
+            <h4 class="edu-heading">Academic Dossier</h4>
+            <div class="edu-item">
+              <strong>B.Tech in CSE (Artificial Intelligence)</strong>
+              <p>Pydah College of Engineering, Kakinada · CGPA: 8.2 / 10.0 (2024 — Present)</p>
+            </div>
+            <div class="edu-item">
+              <strong>Intermediate (State Board)</strong>
+              <p>Govt. Junior College, Kakinada · 73.7% (2022 — 2024)</p>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-left">
-                <a href="#hero" class="footer-logo">
-                    <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket"> /&gt;</span>
-                </a>
-            </div>
+    <!-- CHAPTER 05: DISPATCHES (CONTACT & COLOPHON) -->
+    <section class="chapter chapter-contact contact" id="contact" data-section="contact" data-folio="05">
+      <div class="contact-inner reveal">
+        <p class="chapter-label">Chapter 05 — Dispatches</p>
+        <h2 class="contact-title">
+          Let’s build something<br><em>exceptionally useful.</em>
+        </h2>
+        <p class="contact-sub">
+          I am actively exploring software engineering internships, entry-level full-stack positions, applied AI roles, and open-source collaborations where thoughtful craft and problem-solving matter.
+        </p>
 
-            <div class="footer-center">
-                <p class="copyright">&copy; 2026 Sandeep Manchinasetti. All rights reserved.</p>
+        <!-- Primary Interactive Action Cards -->
+        <div class="contact-cards">
+          
+          <div class="contact-card">
+            <span class="card-kicker">Direct Inbox</span>
+            <h3 class="card-val">sandeepmanchinasetti007@gmail.com</h3>
+            <p class="card-desc">For recruiter inquiries, project proposals, or engineering discussions.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-primary" href="mailto:sandeepmanchinasetti007@gmail.com">
+                <span>Compose Email</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <button class="card-btn card-btn-secondary" id="copyFooterEmailBtn" type="button">
+                <span>Copy Address</span>
+              </button>
             </div>
+          </div>
 
-            <div class="footer-socials">
-                <a href="mailto:sandeepmanchinasetti007@gmail.com" class="social-icon-btn" aria-label="Email">
-                    <i data-lucide="mail"></i>
-                </a>
-                <a href="https://github.com/sandeep2409-gitch" target="_blank" class="social-icon-btn"
-                    aria-label="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
+          <div class="contact-card">
+            <span class="card-kicker">Professional Network</span>
+            <h3 class="card-val">LinkedIn &amp; GitHub</h3>
+            <p class="card-desc">Review professional connections, verified credentials, and active git repositories.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-secondary" href="https://www.linkedin.com/in/sandeep-manchinasetti007" target="_blank" rel="noopener">
+                <span>LinkedIn Profile</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="card-btn card-btn-secondary" href="https://github.com/sandeep2409-gitch" target="_blank" rel="noopener">
+                <span>GitHub Repos</span>
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="card-kicker">Curriculum Vitae</span>
+            <h3 class="card-val">Download One-Page Resume</h3>
+            <p class="card-desc">Comprehensive summary of education, technical proficiencies, internships, and awards.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-primary" href="sandy.pdf" target="_blank" rel="noopener">
+                <span>View Resume PDF</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
         </div>
-    </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i data-lucide="arrow-up"></i>
-    </button>
+        <!-- Colophon & Footer -->
+        <footer class="colophon">
+          <div class="colophon-left">
+            <span>© 2026 Sandeep Manchinasetti</span>
+            <span class="sep" aria-hidden="true">•</span>
+            <span>Designed with an editorial sensibility</span>
+            <span class="sep" aria-hidden="true">•</span>
+            <span>Kakinada, India</span>
+          </div>
+          <div class="colophon-right">
+            <a href="#top" class="back-to-top">Return to Top ↑</a>
+          </div>
+        </footer>
+      </div>
+    </section>
 
+  </main>
 
+  <!-- Interactive Feedback Toast -->
+  <div class="editorial-toast" id="editorialToast" role="status" aria-live="polite">
+    <span class="toast-indicator">●</span>
+    <span class="toast-message" id="toastMessage">Email copied to clipboard.</span>
+  </div>
 </body>
-
 </html>
