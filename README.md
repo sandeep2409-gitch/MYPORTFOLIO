@@ -183,4 +183,4 @@ Kakinada, Andhra Pradesh, India
 
 Distributed under the [MIT License](LICENSE). You are welcome to reference the structure and architecture for personal learning with proper attribution.
 
-<!-- daily-activity: [ ] -->
+<!-- daily-activity: [] -->
