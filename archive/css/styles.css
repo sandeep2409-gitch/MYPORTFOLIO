@@ -55,6 +55,76 @@
 }
 
 /* ==========================================================================
+   Dark Mode Overrides
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Paper Palette (Dark Mode overrides) */
+  --paper: #0b1118;
+  --paper-card: #121c27;
+  --paper-subtle: #172433;
+  --paper-tint: #1e2e40;
+
+  /* Ink Palette */
+  --ink: #f0f4f8;
+  --ink-secondary: #c8d7e6;
+  --ink-muted: #8ea3b8;
+  --ink-faint: #526577;
+  --rule: rgba(255, 255, 255, 0.1);
+  --rule-heavy: rgba(255, 255, 255, 0.22);
+
+  /* Editorial Accent */
+  --cobalt: #5086ff;
+  --cobalt-dark: #3b70e8;
+  --cobalt-soft: rgba(80, 134, 255, 0.14);
+  --cobalt-glow: rgba(80, 134, 255, 0.35);
+
+  /* Dark Chapter */
+  --dark-ink: #070c12;
+  --dark-surface: #0e1722;
+  --dark-surface-hover: #152232;
+  --dark-rule: rgba(255, 255, 255, 0.12);
+  --dark-text: #f0f4f8;
+  --dark-muted: #8ea3b8;
+  --dark-accent: #7fa4ff;
+  --dark-accent-hover: #b4cbff;
+
+  /* Contact Chapter */
+  --contact-bg: #091538;
+  --contact-card: #0f2052;
+  --contact-text: #ffffff;
+  --contact-muted: #9ab4ff;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .floating-bubble-nav {
+  background: rgba(14, 23, 33, 0.88);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .floating-bubble-nav .bubble-btn {
+  background: var(--paper-card);
+  border-color: var(--rule);
+  color: var(--ink-secondary);
+}
+
+[data-theme="dark"] .floating-bubble-nav .bubble-btn:hover,
+[data-theme="dark"] .floating-bubble-nav .bubble-btn.is-active {
+  background: var(--cobalt);
+  color: #ffffff;
+  border-color: var(--cobalt);
+}
+
+[data-theme="dark"] .mobile-header {
+  background: rgba(11, 17, 24, 0.94);
+  border-bottom-color: var(--rule);
+}
+
+/* ==========================================================================
    Base & Reset
    ========================================================================== */
 
@@ -227,7 +297,8 @@ img {
 
 .bubble-btn:hover .bubble-tooltip,
 .bubble-status:hover .bubble-tooltip,
-.bubble-brand:hover .bubble-tooltip {
+.bubble-brand:hover .bubble-tooltip,
+.bubble-theme-toggle:hover .bubble-tooltip {
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(0);
@@ -294,6 +365,53 @@ img {
 @keyframes pulse-dot {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.18); opacity: 0.75; }
+}
+
+/* Floating Theme Switcher Bubble */
+.bubble-theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  cursor: pointer;
+  position: relative;
+  font-size: 1.05rem;
+  transition: all 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 6px rgba(17, 26, 36, 0.05);
+}
+
+.bubble-theme-toggle:hover {
+  transform: scale(1.15);
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  box-shadow: 0 6px 18px rgba(17, 26, 36, 0.2);
+}
+
+/* Mobile Theme Button */
+.mobile-theme-btn {
+  background: var(--paper-subtle);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.95rem;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 180ms var(--ease);
+}
+
+.mobile-theme-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 /* Contextual Theme Adaptation for Floating Dock */
@@ -480,10 +598,10 @@ img {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 6.8vw, 5.4rem);
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
   font-weight: 400;
-  line-height: 0.94;
-  letter-spacing: -0.05em;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   color: var(--ink);
   margin: 16px 0 28px;
   text-wrap: balance;
@@ -492,6 +610,81 @@ img {
 .hero-title em {
   font-style: italic;
   color: var(--cobalt);
+}
+
+/* Vertical Scrolling Text Roller: Real-World Experience ↕ Artificial Intelligence */
+.hero-roller-box {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  border-bottom: 2px dashed rgba(23, 72, 204, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 200ms var(--ease);
+}
+
+.hero-roller-box:hover {
+  border-bottom-color: var(--cobalt);
+}
+
+.hero-roller-window {
+  display: inline-block;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: -0.22em;
+  position: relative;
+}
+
+.hero-roller-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 650ms cubic-bezier(0.34, 1.25, 0.64, 1);
+  will-change: transform;
+}
+
+.hero-roller-phrase {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hero-roller-phrase.phrase-exp {
+  color: var(--cobalt);
+  font-style: italic;
+}
+
+.hero-roller-phrase.phrase-ai {
+  color: var(--ink);
+  font-style: normal;
+  letter-spacing: -0.03em;
+}
+
+[data-theme="dark"] .hero-roller-phrase.phrase-ai {
+  color: #ffffff;
+}
+
+.hero-roller-arrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--cobalt);
+  margin-left: 0.18em;
+  vertical-align: middle;
+  animation: float-roller-arrow 2.2s infinite ease-in-out;
+  transition: transform 400ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes float-roller-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 .hero-lede {
@@ -1460,6 +1653,362 @@ img {
 }
 
 /* ==========================================================================
+   Minimalist Hero Hook Spotlight
+   ========================================================================== */
+
+.hero-hook-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  margin: 22px 0 26px;
+  box-shadow: 0 1px 3px rgba(17, 26, 36, 0.03);
+  transition: border-color 180ms var(--ease);
+}
+
+.hero-hook-minimal:hover {
+  border-color: var(--cobalt);
+}
+
+.hook-min-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--ink);
+}
+
+.hook-min-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cobalt);
+  background: var(--cobalt-soft);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.hook-min-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hook-min-links a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--cobalt);
+}
+
+.hook-min-links a:hover {
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   Minimalist Proof Section / Numbers Matter Strip
+   ========================================================================== */
+
+.chapter-proof-minimal {
+  background: var(--paper-subtle);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-top: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(40px, 6vw, 64px);
+}
+
+.proof-min-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.proof-min-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.proof-min-sub {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--ink-muted);
+}
+
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.metric-strip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: all 180ms var(--ease);
+}
+
+.metric-strip-item:hover {
+  border-color: var(--cobalt);
+  transform: translateY(-2px);
+}
+
+.metric-strip-number {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.metric-strip-number .metric-prefix,
+.metric-strip-number .metric-suffix {
+  font-size: 1.15rem;
+  color: var(--cobalt);
+}
+
+.metric-strip-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.metric-strip-desc {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   About Me Dual Dossier (Skills + Achievements)
+   ========================================================================== */
+
+.about-dual-dossier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.dossier-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: clamp(24px, 3vw, 32px);
+  box-shadow: 0 1px 4px rgba(17, 26, 36, 0.03);
+  transition: all 200ms var(--ease);
+}
+
+.dossier-card:hover {
+  border-color: var(--cobalt);
+  box-shadow: 0 4px 16px rgba(17, 26, 36, 0.05);
+}
+
+.dossier-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.dossier-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.dossier-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  background: var(--cobalt-soft);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: none;
+}
+
+.skills-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-category-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-category-title::before {
+  content: "•";
+  color: var(--cobalt);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.achievements-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--paper-subtle);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: all 180ms var(--ease);
+}
+
+.achievements-list li:hover {
+  background: var(--paper-card);
+  border-color: var(--cobalt);
+  transform: translateX(4px);
+}
+
+.achieve-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.achieve-body strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.achieve-body p {
+  font-size: 0.775rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Minimalist Case Study Deep Dive
+   ========================================================================== */
+
+.case-study-spotlight-minimal {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-rule);
+  border-left: 3px solid var(--dark-accent);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cs-spotlight-content {
+  max-width: 680px;
+}
+
+.cs-spotlight-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dark-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cs-spotlight-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.cs-spotlight-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--dark-muted);
+  margin: 0;
+}
+
+.case-study-qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--dark-rule);
+}
+
+.cs-qa-row {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.cs-qa-label {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--dark-accent);
+  text-transform: uppercase;
+}
+
+.cs-qa-text {
+  color: var(--dark-text);
+  margin: 0;
+}
+
+/* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
 
@@ -1538,6 +2087,21 @@ img {
     padding-bottom: 60px;
   }
 
+  .hero-title {
+    font-size: clamp(1.85rem, 7.5vw, 2.85rem);
+    line-height: 1.15;
+  }
+
+  .hero-roller-window {
+    height: 1.25em;
+    vertical-align: -0.25em;
+  }
+
+  .hero-roller-phrase {
+    height: 1.25em;
+    line-height: 1.25;
+  }
+
   .hero-topline {
     position: static;
     margin-bottom: 24px;
@@ -1582,6 +2146,50 @@ img {
   .timeline-row {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .metric-strip-item {
+    padding: 12px 14px;
+  }
+
+  .metric-strip-number {
+    font-size: 1.65rem;
+  }
+
+  .about-dual-dossier {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hero-hook-minimal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hook-min-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .case-study-spotlight-minimal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cs-qa-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 

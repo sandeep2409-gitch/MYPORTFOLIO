@@ -31,7 +31,7 @@
   
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
-  <title>Sandeep Manchinasetti — Portfolio & Engineering Dossier</title>
+  <title>Sandeep Manchinasetti — Portfolio &amp; Engineering Dossier</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,27 +46,39 @@
     <div class="bubble-spine" aria-hidden="true"></div>
 
     <nav class="bubble-list" aria-label="Portfolio chapters">
-      <a class="bubble-btn is-active" href="#top" data-nav="top" title="Chapter 01: Prologue" aria-label="Chapter 01: Prologue">
+      <a class="bubble-btn is-active" href="#top" data-nav="top" title="Chapter 01: Hook &amp; Prologue" aria-label="Chapter 01: Prologue">
         <span class="bubble-num">01</span>
-        <span class="bubble-tooltip">01 — Prologue</span>
+        <span class="bubble-tooltip">01 — Prologue &amp; Hook</span>
       </a>
-      <a class="bubble-btn" href="#skills" data-nav="skills" title="Chapter 02: Field Notes" aria-label="Chapter 02: Field Notes">
+      <a class="bubble-btn" href="#about" data-nav="about" title="Chapter 02: About Me &amp; Skills" aria-label="Chapter 02: About Me">
         <span class="bubble-num">02</span>
-        <span class="bubble-tooltip">02 — Field Notes</span>
+        <span class="bubble-tooltip">02 — About Me &amp; Skills</span>
       </a>
-      <a class="bubble-btn" href="#work" data-nav="work" title="Chapter 03: Selected Work" aria-label="Chapter 03: Selected Work">
+      <a class="bubble-btn" href="#proof" data-nav="proof" title="Chapter 03: The Proof Section" aria-label="Chapter 03: Proof">
         <span class="bubble-num">03</span>
-        <span class="bubble-tooltip">03 — Selected Work</span>
+        <span class="bubble-tooltip">03 — Proof &amp; Metrics</span>
       </a>
-      <a class="bubble-btn" href="#experience" data-nav="experience" title="Chapter 04: Career Desk" aria-label="Chapter 04: Career Desk">
+      <a class="bubble-btn" href="#work" data-nav="work" title="Chapter 04: Case Studies" aria-label="Chapter 04: Selected Work">
         <span class="bubble-num">04</span>
-        <span class="bubble-tooltip">04 — Career Desk</span>
+        <span class="bubble-tooltip">04 — Case Studies</span>
       </a>
-      <a class="bubble-btn" href="#contact" data-nav="contact" title="Chapter 05: Dispatches" aria-label="Chapter 05: Dispatches">
+      <a class="bubble-btn" href="#experience" data-nav="experience" title="Chapter 05: Career Desk" aria-label="Chapter 05: Career Desk">
         <span class="bubble-num">05</span>
-        <span class="bubble-tooltip">05 — Dispatches</span>
+        <span class="bubble-tooltip">05 — Career Desk</span>
+      </a>
+      <a class="bubble-btn" href="#contact" data-nav="contact" title="Chapter 06: Contact Dispatches" aria-label="Chapter 06: Contact">
+        <span class="bubble-num">06</span>
+        <span class="bubble-tooltip">06 — Contact Me</span>
       </a>
     </nav>
+
+    <div class="bubble-spine" aria-hidden="true"></div>
+
+    <!-- Theme Switcher Bubble -->
+    <button class="bubble-theme-toggle" id="themeToggleBtn" type="button" aria-label="Switch to Dark Mode" title="Toggle Theme">
+      <span id="themeIcon" aria-hidden="true">🌙</span>
+      <span class="bubble-tooltip" id="themeTooltip">Toggle Dark/Light Mode</span>
+    </button>
 
     <div class="bubble-spine" aria-hidden="true"></div>
 
@@ -82,8 +94,12 @@
     <div class="mobile-status">
       <span class="status-dot" aria-hidden="true"></span> Available
     </div>
+    <button class="mobile-theme-btn" id="mobileThemeToggleBtn" type="button" aria-label="Toggle theme">
+      <span id="mobileThemeIcon" aria-hidden="true">🌙</span>
+    </button>
     <nav class="mobile-nav">
-      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#proof">Proof</a>
       <a href="#work">Work</a>
       <a href="#experience">Career</a>
       <a href="#contact">Contact</a>
@@ -93,35 +109,61 @@
   <!-- Main Document -->
   <main id="main">
     
-    <!-- CHAPTER 01: PROLOGUE / HERO -->
+    <!-- CHAPTER 01: PROLOGUE & THE HOOK PAGE -->
     <section class="chapter hero" id="top" data-section="top" data-folio="01">
       <div class="hero-topline">
         <span>Sandeep Manchinasetti</span>
-        
+        <span class="separator" aria-hidden="true">•</span>
+        <span>AI Undergraduate &amp; Full-Stack Engineer</span>
+        <span class="separator" aria-hidden="true">•</span>
+        <span>Kakinada, India</span>
       </div>
 
       <div class="hero-body reveal">
-        <p class="chapter-label">Engineering &amp; Applied AI</p>
+        <p class="chapter-label">Engineering Dossier • 2026</p>
         <h1 class="hero-title">
-          Building systems where <em>solid engineering</em> meets practical intelligence.
+          A Developer who <em>Solves Problems</em> through
+          <span class="hero-roller-box" id="heroRollerBox" role="button" tabindex="0" aria-label="Toggle between Real-World Experience and Artificial Intelligence" title="Click or scroll to toggle">
+            <span class="hero-roller-window">
+              <span class="hero-roller-track" id="heroRollerTrack">
+                <span class="hero-roller-phrase phrase-exp">Real-World Experience</span>
+                <span class="hero-roller-phrase phrase-ai">Artificial Intelligence</span>
+              </span>
+            </span>
+            <span class="hero-roller-arrow" id="heroRollerArrow" aria-hidden="true">↕</span>
+          </span>.
         </h1>
         <p class="hero-lede">
-          I am a Computer Science &amp; Artificial Intelligence student crafting production-grade MERN web platforms, 
+          I am an Artificial Intelligence student and Full-Stack Engineer crafting production-grade MERN web platforms, 
           deep-learning computer vision systems, and defensive security solutions that deliver tangible utility.
         </p>
 
+        <!-- Minimalist Hero Hook Spotlight -->
+        <div class="hero-hook-minimal">
+          <div class="hook-min-left">
+            <span class="hook-min-badge">🏆 College Hackathon Winner</span>
+            <span><strong>College360</strong> — Campus Operations &amp; Management Platform</span>
+          </div>
+          <div class="hook-min-links">
+            <a href="https://college360-ibj2.vercel.app/" target="_blank" rel="noopener">Live Prototype ↗</a>
+            <a href="#project-college360">Case Study ↓</a>
+            <a href="https://github.com/sandeep2409-gitch/college360.git" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
+
+        <!-- Proof Strip -->
         <div class="hero-proof-strip">
           <div class="proof-pill">
             <span class="proof-tag">Rank #1</span>
             <span class="proof-val">GeeksforGeeks Institute</span>
           </div>
           <div class="proof-pill">
-            <span class="proof-tag">Winner</span>
-            <span class="proof-val">CODESTORM S2 Hackathon</span>
+            <span class="proof-tag"><span class="js-live-streak">50</span>-Day Streak</span>
+            <span class="proof-val">Daily POTD (Live)</span>
           </div>
           <div class="proof-pill">
-            <span class="proof-tag">5+ Projects</span>
-            <span class="proof-val">Production &amp; Research</span>
+            <span class="proof-tag">Winner</span>
+            <span class="proof-val">College Hackathon</span>
           </div>
           <div class="proof-pill">
             <span class="proof-tag">4 Internships</span>
@@ -131,7 +173,7 @@
 
         <div class="hero-actions">
           <a class="action action-primary" href="#work">
-            <span>Explore Selected Work</span>
+            <span>Explore Case Studies</span>
             <span class="arrow" aria-hidden="true">↓</span>
           </a>
           <a class="action action-secondary" href="sandy.pdf" target="_blank" rel="noopener">
@@ -145,7 +187,7 @@
         </div>
       </div>
 
-      <div class="hero-stamp" aria-label="Verified Code & Applied AI">
+      <div class="hero-stamp" aria-label="Verified Code &amp; Applied AI">
         <svg viewBox="0 0 100 100" class="stamp-svg" aria-hidden="true">
           <path id="stampPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
           <text font-size="10.5" letter-spacing="2">
@@ -156,13 +198,13 @@
       </div>
     </section>
 
-    <!-- CHAPTER 02: FIELD NOTES (SKILLS & ARCHITECTURE) -->
-    <section class="chapter chapter-paper profile" id="skills" data-section="skills" data-folio="02">
+    <!-- CHAPTER 02: ABOUT ME & FIELD NOTES -->
+    <section class="chapter chapter-paper profile" id="about" data-section="about" data-folio="02">
       <header class="chapter-header reveal">
-        <p class="chapter-label">Chapter 02 — Field Notes</p>
+        <p class="chapter-label">Chapter 02 — About Me &amp; Field Notes</p>
         <h2 class="chapter-title">Technical arsenal &amp;<br>foundational craft.</h2>
         <p class="chapter-sub">
-          A balanced profile combining full-stack MERN architecture, machine-learning transfer pipelines, real-time vision algorithms, and security-minded protocols.
+          A disciplined engineering mindset combining full-stack MERN architecture, machine-learning transfer pipelines, real-time vision algorithms, and defensive security protocols.
         </p>
       </header>
 
@@ -184,66 +226,182 @@
             "A well-engineered interface is meaningless without resilient backend architecture, just as sophisticated AI models are useless without clean, practical integration."
           </p>
 
-          <div class="notes-grid" aria-label="Core Competencies">
-            <article class="note-box">
-              <div class="note-num">01</div>
-              <div class="note-body">
-                <h3>Full-Stack Web Systems</h3>
-                <p>Architecting robust applications with React, Next.js, Node.js, Express, and MongoDB. Specialize in RESTful APIs, JWT role-based access control, responsive interfaces, and scalable database schemas.</p>
-                <div class="tech-pills">
-                  <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span>
-                </div>
+          <!-- Dual Dossier: Skills & Achievements Side-by-Side -->
+          <div class="about-dual-dossier" aria-label="Skills and Achievements">
+            
+            <!-- Left Card: Skills -->
+            <article class="dossier-card">
+              <div class="dossier-card-head">
+                <h3 class="dossier-card-title">Technical Skills</h3>
+                <span class="dossier-badge">Core Arsenal</span>
               </div>
+              <ul class="skills-list">
+                <li>
+                  <span class="skill-category-title">Full-Stack Web Systems</span>
+                  <div class="tech-pills">
+                    <span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span><span>Tailwind</span><span>REST APIs</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="skill-category-title">Applied AI &amp; Deep Learning</span>
+                  <div class="tech-pills">
+                    <span>Python</span><span>TensorFlow</span><span>Scikit-Learn</span><span>Transfer Learning</span><span>EfficientNet</span><span>Flask</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="skill-category-title">Computer Vision &amp; Perception</span>
+                  <div class="tech-pills">
+                    <span>OpenCV</span><span>MediaPipe</span><span>CNN</span><span>Hand Landmarks</span><span>Face Verification</span><span>Geofencing</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="skill-category-title">Security &amp; Problem Solving</span>
+                  <div class="tech-pills">
+                    <span>Threat Modeling</span><span>OWASP Top 10</span><span>Data Structures</span><span>Algorithms</span><span>Git</span><span>Postman</span>
+                  </div>
+                </li>
+              </ul>
             </article>
 
-            <article class="note-box">
-              <div class="note-num">02</div>
-              <div class="note-body">
-                <h3>Applied Machine Learning</h3>
-                <p>Developing predictive models and deep neural nets with Python, TensorFlow, and scikit-learn. Hands-on experience implementing transfer learning (EfficientNetB0) for biomedical MRI scans and NLP feature classification.</p>
-                <div class="tech-pills">
-                  <span>Python</span><span>TensorFlow</span><span>Scikit-Learn</span><span>NLP</span><span>EfficientNet</span><span>Flask</span>
-                </div>
+            <!-- Right Card: Achievements -->
+            <article class="dossier-card">
+              <div class="dossier-card-head">
+                <h3 class="dossier-card-title">Achievements</h3>
+                <span class="dossier-badge">Verifiable Record</span>
               </div>
+              <ul class="achievements-list">
+                <li>
+                  <span class="achieve-icon" aria-hidden="true">🏆</span>
+                  <div class="achieve-body">
+                    <strong>CODESTORM S2 College Hackathon Winner</strong>
+                    <p>1st Place / Category Winner for College360 institutional architecture.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="achieve-icon" aria-hidden="true">🥇</span>
+                  <div class="achieve-body">
+                    <strong>GeeksforGeeks Institute Rank #1</strong>
+                    <p>Top spot on college leaderboard with active <span class="js-live-streak">50</span>-day POTD continuous streak and 146+ problems solved.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="achieve-icon" aria-hidden="true">🛡️</span>
+                  <div class="achieve-body">
+                    <strong>Inter-College Debugging Champion</strong>
+                    <p>1st Prize in rapid code vulnerability identification and algorithmic bug fixing.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="achieve-icon" aria-hidden="true">🌾</span>
+                  <div class="achieve-body">
+                    <strong>SRUJANA 2K26 Hackathon Finalist</strong>
+                    <p>Direct-to-consumer digital farmer enablement platform with team Cypher Squad.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="achieve-icon" aria-hidden="true">🎓</span>
+                  <div class="achieve-body">
+                    <strong>Academic Distinction in AI (CGPA 8.2)</strong>
+                    <p>B.Tech in Artificial Intelligence, Pydah College of Engineering, Kakinada.</p>
+                  </div>
+                </li>
+              </ul>
             </article>
 
-            <article class="note-box">
-              <div class="note-num">03</div>
-              <div class="note-body">
-                <h3>Computer Vision &amp; Spatial AI</h3>
-                <p>Building real-time perception workflows using OpenCV and MediaPipe: dynamic hand landmark tracking for sign language translation, facial verification pipelines, and geofenced biometric systems.</p>
-                <div class="tech-pills">
-                  <span>OpenCV</span><span>MediaPipe</span><span>CNN</span><span>Real-time Streams</span><span>Haar / Deep Face</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="note-box">
-              <div class="note-num">04</div>
-              <div class="note-body">
-                <h3>Security &amp; Problem Solving</h3>
-                <p>Defensive security mindset rooted in threat modeling, penetration testing simulations, and algorithmic problem-solving. Daily competitive coder with high consistency.</p>
-                <div class="tech-pills">
-                  <span>Threat Modeling</span><span>URL Lexical Analysis</span><span>Data Structures</span><span>Algorithms</span><span>Git</span>
-                </div>
-              </div>
-            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CHAPTER 03: SELECTED WORK (CASE STUDIES) -->
-    <section class="chapter chapter-ink work" id="work" data-section="work" data-folio="03">
+    <!-- CHAPTER 03: THE PROOF SECTION ("NUMBERS MATTER") -->
+    <section class="chapter chapter-paper chapter-proof-minimal" id="proof" data-section="proof" data-folio="03">
+      <div class="proof-min-header reveal">
+        <h2 class="proof-min-title">Numbers Matter.</h2>
+        <span class="proof-min-sub">Verified metrics tracking daily algorithmic discipline &amp; production engineering</span>
+      </div>
+
+      <!-- Minimalist Live Counter Metrics Strip -->
+      <div class="metrics-strip reveal">
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-prefix">#</span>
+            <span class="metric-count" data-target="1">0</span>
+          </div>
+          <span class="metric-strip-label">Institute Leaderboard</span>
+          <span class="metric-strip-desc">Rank #1 at GeeksforGeeks</span>
+        </div>
+
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-count js-live-streak" data-target="50" data-counter-type="streak">0</span>
+            <span class="metric-suffix">d</span>
+          </div>
+          <span class="metric-strip-label">Daily POTD Streak</span>
+          <span class="metric-strip-desc">Auto-updated live</span>
+        </div>
+
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-count" data-target="146">0</span>
+            <span class="metric-suffix">+</span>
+          </div>
+          <span class="metric-strip-label">Problems Solved</span>
+          <span class="metric-strip-desc">521 Coding Score</span>
+        </div>
+
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-count" data-target="1">0</span>
+            <span class="metric-suffix">st</span>
+          </div>
+          <span class="metric-strip-label">College Hackathon</span>
+          <span class="metric-strip-desc">Winner (CODESTORM S2)</span>
+        </div>
+
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-count" data-target="4">0</span>
+          </div>
+          <span class="metric-strip-label">Internships</span>
+          <span class="metric-strip-desc">Full-Stack &amp; Security</span>
+        </div>
+
+        <div class="metric-strip-item">
+          <div class="metric-strip-number">
+            <span class="metric-count" data-target="8.2" data-decimal="true">0.0</span>
+            <span class="metric-suffix">/10</span>
+          </div>
+          <span class="metric-strip-label">Academic CGPA</span>
+          <span class="metric-strip-desc">B.Tech in AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 04: SELECTED WORK (CASE STUDIES) -->
+    <section class="chapter chapter-ink work" id="work" data-section="work" data-folio="04">
       <header class="work-header reveal">
         <div class="work-header-meta">
-          <p class="chapter-label">Chapter 03 — Engineering Ledger</p>
+          <p class="chapter-label">Chapter 04 — Engineering Ledger &amp; Case Studies</p>
           <h2 class="chapter-title">Selected projects<br>engineered for impact.</h2>
         </div>
         <p class="work-header-desc">
           Every project is built to address a specific, measurable challenge—from end-to-end institutional workflow automation to medical AI classification and real-time accessibility translation.
         </p>
       </header>
+
+      <!-- Case Study Spotlight: How I Became a Developer -->
+      <article class="case-study-spotlight-minimal reveal">
+        <div class="cs-spotlight-content">
+          <span class="cs-spotlight-kicker">Dedicated Narrative Case Study</span>
+          <h3 class="cs-spotlight-title">How I Became a Developer — An Engineering Journey</h3>
+          <p class="cs-spotlight-desc">
+            A four-part retrospective on building algorithmic discipline, transitioning from theory to full-stack MERN, and winning hackathons.
+          </p>
+        </div>
+        <a class="action action-secondary" style="white-space: nowrap;" href="how-i-became-a-developer.html">
+          <span>Read Case Study ↗</span>
+        </a>
+      </article>
 
       <!-- Project Quick Filter / Index -->
       <nav class="project-toc" aria-label="Quick jump to project dossier">
@@ -267,20 +425,29 @@
               <span class="entry-category">Full-Stack Enterprise Platform</span>
               <h3 class="entry-title">College360 — Comprehensive Campus Management System</h3>
               <div class="entry-badge-wrap">
-                <span class="entry-badge badge-accent">🏆 CODESTORM Winner</span>
+                <span class="entry-badge badge-accent">🏆 College Hackathon Winner</span>
               </div>
             </div>
             <p class="entry-summary">
               A full-scale institutional operations engine unifying student attendance tracking, academic feedback, centralized records, and dynamic timetable generation under a unified, multi-tiered role-based access architecture.
             </p>
-            <div class="entry-highlights">
-              <div class="highlight-item">
-                <strong>Core Challenge:</strong> Eliminating fragmented paper and spreadsheet workflows across departments with differing permission levels (Admins, Faculty, Students).
+
+            <!-- Minimalist QA List -->
+            <div class="case-study-qa-list">
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Problem:</span>
+                <p class="cs-qa-text">College administration was bottlenecked by fragmented spreadsheet rosters, untracked proxy attendance ("buddy punching"), and manual timetable scheduling clashes.</p>
               </div>
-              <div class="highlight-item">
-                <strong>Implementation:</strong> Built with MongoDB, Express.js, React, and Node.js. Integrated secure JWT-based authorization gates, REST endpoints for record CRUD, and an automated scheduling matrix.
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Solution:</span>
+                <p class="cs-qa-text">Architected an end-to-end MERN stack application with strict JWT role-based access control, an automated conflict-free timetable scheduler, and centralized attendance logging.</p>
+              </div>
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Outcome:</span>
+                <p class="cs-qa-text">Evaluated live in the CODESTORM Season 2 College Hackathon, securing 1st Place / Category Winner with zero data collisions and sub-200ms API latency.</p>
               </div>
             </div>
+
             <div class="entry-specs">
               <div class="spec-col">
                 <span class="spec-label">Stack</span>
@@ -320,14 +487,23 @@
             <p class="entry-summary">
               A clinical decision-support web application that analyzes neuroimaging MRI scans for classification and tumor detection using deep transfer learning, serving instant confidence scorings through an asynchronous Flask API.
             </p>
-            <div class="entry-highlights">
-              <div class="highlight-item">
-                <strong>Core Challenge:</strong> High computational requirements and risk of overfitting when training medical vision models on constrained clinical image datasets.
+
+            <!-- Minimalist QA List -->
+            <div class="case-study-qa-list">
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Problem:</span>
+                <p class="cs-qa-text">Manual radiological analysis of brain MRI scans is time-sensitive and suffers from diagnostic variability. Training deep nets from scratch on small clinical datasets causes overfitting.</p>
               </div>
-              <div class="highlight-item">
-                <strong>Implementation:</strong> Leveraged <code>EfficientNetB0</code> transfer learning pretrained on ImageNet, fine-tuned on neuro-MRI scans with data augmentation pipelines, served via a lightweight Flask web interface.
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Solution:</span>
+                <p class="cs-qa-text">Employed transfer learning using an <code>EfficientNetB0</code> backbone pre-trained on ImageNet with custom data augmentation pipelines, served via asynchronous Flask micro-endpoints.</p>
+              </div>
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Outcome:</span>
+                <p class="cs-qa-text">Delivered rapid, reproducible classification probabilities across tumor subtypes with high validation accuracy, serving inferences in under 1.2 seconds per slice.</p>
               </div>
             </div>
+
             <div class="entry-specs">
               <div class="spec-col">
                 <span class="spec-label">Stack</span>
@@ -363,14 +539,23 @@
             <p class="entry-summary">
               An intelligent URL classification pipeline and browser extension that performs real-time lexical, entropy, and structural analysis to detect malicious zero-day phishing sites before the user exposes credentials.
             </p>
-            <div class="entry-highlights">
-              <div class="highlight-item">
-                <strong>Core Challenge:</strong> Traditional blocklists fail against fast-flux domains and ephemeral phishing URLs generated in active cyber campaigns.
+
+            <!-- Minimalist QA List -->
+            <div class="case-study-qa-list">
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Problem:</span>
+                <p class="cs-qa-text">Static URL blocklists and reputation databases fail against fast-flux domains and ephemeral phishing URLs generated dynamically in active zero-day campaigns.</p>
               </div>
-              <div class="highlight-item">
-                <strong>Implementation:</strong> Extracted 30+ lexical, domain-age, and protocol features from over 100,000 URL samples. Trained supervised classification trees in scikit-learn, paired with a lightweight Chrome Extension providing instantaneous browser warnings.
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Solution:</span>
+                <p class="cs-qa-text">Extracted 30+ lexical, domain-entropy, and protocol-level features from over 100,000 verified URL samples. Trained supervised classification trees in Scikit-learn integrated with Manifest V3.</p>
+              </div>
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Outcome:</span>
+                <p class="cs-qa-text">Achieved high predictive accuracy on unseen malicious URLs, providing users with instant sub-50ms browser warning banners prior to page DOM rendering.</p>
               </div>
             </div>
+
             <div class="entry-specs">
               <div class="spec-col">
                 <span class="spec-label">Stack</span>
@@ -406,14 +591,23 @@
             <p class="entry-summary">
               A touchless enterprise attendance platform combining real-time camera face verification, device geolocation perimeter checks, and timed QR token fallback authentication to prevent spoofing and proxy logging.
             </p>
-            <div class="entry-highlights">
-              <div class="highlight-item">
-                <strong>Core Challenge:</strong> Preventing attendance proxy fraud ("buddy punching") and photo-based spoof attacks in remote or hybrid institutional setups.
+
+            <!-- Minimalist QA List -->
+            <div class="case-study-qa-list">
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Problem:</span>
+                <p class="cs-qa-text">Physical fingerprint scanners cause hygiene bottlenecks and allow attendance fraud through photo spoofing or location spoofing in hybrid work and educational environments.</p>
               </div>
-              <div class="highlight-item">
-                <strong>Implementation:</strong> Integrated OpenCV face detection algorithms with deep embeddings comparison, backed by GPS coordinates validation against pre-registered campus boundaries.
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Solution:</span>
+                <p class="cs-qa-text">Integrated OpenCV face recognition with deep embeddings matching, reinforced with client-side GPS geofencing perimeter validation and dynamic rotating cryptographic QR tokens.</p>
+              </div>
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Outcome:</span>
+                <p class="cs-qa-text">Eliminated proxy punch fraud entirely in deployment trials, handling check-ins within 1.5 seconds per user with strict location verification.</p>
               </div>
             </div>
+
             <div class="entry-specs">
               <div class="spec-col">
                 <span class="spec-label">Stack</span>
@@ -449,14 +643,23 @@
             <p class="entry-summary">
               An assistive computer-vision application translating American Sign Language (ASL) finger-spelling gestures into readable English text in real time, bridging communication barriers for the speech- and hearing-impaired.
             </p>
-            <div class="entry-highlights">
-              <div class="highlight-item">
-                <strong>Core Challenge:</strong> Complex spatial variations, hand rotations, lighting inconsistencies, and motion blur during live video capture.
+
+            <!-- Minimalist QA List -->
+            <div class="case-study-qa-list">
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Problem:</span>
+                <p class="cs-qa-text">Communication between sign language users and non-signers requires costly interpreters. Real-time vision models struggle with rapid motion blur and complex finger overlaps.</p>
               </div>
-              <div class="highlight-item">
-                <strong>Implementation:</strong> Utilized MediaPipe Hands for 21 3D coordinate landmark tracking per frame, feeding normalized coordinate vectors into a convolutional classification network for rapid character inference.
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Solution:</span>
+                <p class="cs-qa-text">Extracted 21 3D spatial hand landmarks per frame using MediaPipe Hands, fed normalized spatial vectors into a custom convolutional classifier, and generated continuous buffered text.</p>
+              </div>
+              <div class="cs-qa-row">
+                <span class="cs-qa-label">Outcome:</span>
+                <p class="cs-qa-text">Achieved smooth 30+ FPS real-time translation on standard webcams without dedicated GPU accelerators, converting gestures into readable sentences instantaneously.</p>
               </div>
             </div>
+
             <div class="entry-specs">
               <div class="spec-col">
                 <span class="spec-label">Stack</span>
@@ -479,10 +682,10 @@
       </div>
     </section>
 
-    <!-- CHAPTER 04: CAREER DESK (EXPERIENCE & ACHIEVEMENTS) -->
-    <section class="chapter chapter-paper experience" id="experience" data-section="experience" data-folio="04">
+    <!-- CHAPTER 05: CAREER DESK (EXPERIENCE & ACHIEVEMENTS) -->
+    <section class="chapter chapter-paper experience" id="experience" data-section="experience" data-folio="05">
       <header class="chapter-header reveal">
-        <p class="chapter-label">Chapter 04 — Career Desk</p>
+        <p class="chapter-label">Chapter 05 — Career Desk</p>
         <h2 class="chapter-title">Practical tenure &amp;<br>verifiable milestones.</h2>
         <p class="chapter-sub">
           Hands-on developer apprenticeships combined with consistent competitive algorithmic execution and hackathon podium finishes.
@@ -574,13 +777,13 @@
             
             <ul class="recognition-list">
               <li>
-                <strong>GeeksforGeeks Institute Rank #1:</strong> Maintained a 42-day record problem streak with 106 Problem-of-the-Day (POTD) solutions delivered consistently.
+                <strong>GeeksforGeeks Institute Rank #1:</strong> Maintained an active <span class="js-live-streak">50</span>-day continuous streak with daily POTD solutions.
               </li>
               <li>
                 <strong>LeetCode Problem Solving:</strong> 42+ algorithmic challenges conquered across Easy, Medium, and Hard domains (Arrays, Graphs, Dynamic Programming).
               </li>
               <li>
-                <strong>CODESTORM S2 Hackathon Winner:</strong> Claimed 2nd Place / Category Winner for College360 institutional architecture.
+                <strong>CODESTORM S2 College Hackathon Winner:</strong> Claimed 1st Place / Category Winner for College360 institutional architecture.
               </li>
               <li>
                 <strong>SRUJANA 2K26 Hackathon:</strong> Built a direct-to-consumer digital farmer enablement platform with team <em>Cypher Squad</em>.
@@ -606,10 +809,10 @@
       </div>
     </section>
 
-    <!-- CHAPTER 05: DISPATCHES (CONTACT & COLOPHON) -->
-    <section class="chapter chapter-contact contact" id="contact" data-section="contact" data-folio="05">
+    <!-- CHAPTER 06: DISPATCHES (CONTACT ME) -->
+    <section class="chapter chapter-contact contact" id="contact" data-section="contact" data-folio="06">
       <div class="contact-inner reveal">
-        <p class="chapter-label">Chapter 05 — Dispatches</p>
+        <p class="chapter-label">Chapter 06 — Dispatches</p>
         <h2 class="contact-title">
           Let’s build something<br><em>exceptionally useful.</em>
         </h2>
@@ -617,49 +820,61 @@
           I am actively exploring software engineering internships, entry-level full-stack positions, applied AI roles, and open-source collaborations where thoughtful craft and problem-solving matter.
         </p>
 
-        <!-- Primary Interactive Action Cards -->
+        <!-- 4 Contact Cards Matching Handwritten Wireframe -->
         <div class="contact-cards">
           
+          <!-- Card 1: Instagram Handle -->
           <div class="contact-card">
-            <span class="card-kicker">Direct Inbox</span>
+            <span class="card-kicker">[IG] Instagram</span>
+            <h3 class="card-val">@sandeepmanchinasetti</h3>
+            <p class="card-desc">Follow developer updates, behind-the-scenes hackathon builds, and engineering dispatches.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-primary" href="https://www.instagram.com/sandeepmanchinasetti" target="_blank" rel="noopener">
+                <span>View Instagram</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: LinkedIn -->
+          <div class="contact-card">
+            <span class="card-kicker">[In] LinkedIn</span>
+            <h3 class="card-val">Sandeep Manchinasetti</h3>
+            <p class="card-desc">Connect on professional networks, review endorsements, and discuss career opportunities.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-primary" href="https://www.linkedin.com/in/sandeep-manchinasetti007" target="_blank" rel="noopener">
+                <span>Connect on LinkedIn</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: GitHub -->
+          <div class="contact-card">
+            <span class="card-kicker">[GH] GitHub</span>
+            <h3 class="card-val">sandeep2409-gitch</h3>
+            <p class="card-desc">Audit open-source repositories, commit history, computer vision pipelines, and full-stack code.</p>
+            <div class="card-actions">
+              <a class="card-btn card-btn-primary" href="https://github.com/sandeep2409-gitch" target="_blank" rel="noopener">
+                <span>Explore Repositories</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Mail Dispatch -->
+          <div class="contact-card">
+            <span class="card-kicker">[Mail] Direct Dispatch</span>
             <h3 class="card-val">sandeepmanchinasetti007@gmail.com</h3>
-            <p class="card-desc">For recruiter inquiries, project proposals, or engineering discussions.</p>
+            <p class="card-desc">Send project proposals, recruiter inquiries, or request technical consultations directly.</p>
             <div class="card-actions">
               <a class="card-btn card-btn-primary" href="mailto:sandeepmanchinasetti007@gmail.com">
-                <span>Compose Email</span>
+                <span>Compose Mail</span>
                 <span aria-hidden="true">↗</span>
               </a>
-              <button class="card-btn card-btn-secondary" id="copyFooterEmailBtn" type="button">
-                <span>Copy Address</span>
+              <button class="card-btn card-btn-secondary" id="copyContactEmailBtn" type="button">
+                <span>Copy Email</span>
               </button>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <span class="card-kicker">Professional Network</span>
-            <h3 class="card-val">LinkedIn &amp; GitHub</h3>
-            <p class="card-desc">Review professional connections, verified credentials, and active git repositories.</p>
-            <div class="card-actions">
-              <a class="card-btn card-btn-secondary" href="https://www.linkedin.com/in/sandeep-manchinasetti007" target="_blank" rel="noopener">
-                <span>LinkedIn Profile</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="card-btn card-btn-secondary" href="https://github.com/sandeep2409-gitch" target="_blank" rel="noopener">
-                <span>GitHub Repos</span>
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <span class="card-kicker">Curriculum Vitae</span>
-            <h3 class="card-val">Download One-Page Resume</h3>
-            <p class="card-desc">Comprehensive summary of education, technical proficiencies, internships, and awards.</p>
-            <div class="card-actions">
-              <a class="card-btn card-btn-primary" href="sandy.pdf" target="_blank" rel="noopener">
-                <span>View Resume PDF</span>
-                <span aria-hidden="true">↗</span>
-              </a>
             </div>
           </div>
 
@@ -670,7 +885,7 @@
           <div class="colophon-left">
             <span>© 2026 Sandeep Manchinasetti</span>
             <span class="sep" aria-hidden="true">•</span>
-            <span>Designed with an editorial sensibility</span>
+            <span>Editorial Engineering Dossier</span>
             <span class="sep" aria-hidden="true">•</span>
             <span>Kakinada, India</span>
           </div>

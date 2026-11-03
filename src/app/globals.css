@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, .dark {
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Sarthak-inspired Editorial Dark Palette (Default) */
+  --bg: #030303;
+  --surface: #0b0b0b;
+  --surface-hover: #141414;
+  --surface-subtle: #111111;
+  --ink: #f1eee8;
+  --muted: #aaa9a4;
+  --blue: #ff8c59;
+  --line: rgba(241, 238, 232, 0.08);
+  --line-strong: rgba(241, 238, 232, 0.16);
+  --gutter: clamp(24px, 5vw, 88px);
+}
+
+.light {
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Clean Editorial Light Palette */
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface-hover: #f1efe9;
+  --surface-subtle: #eae7df;
+  --ink: #111111;
+  --muted: #5e5d57;
+  --blue: #e85d1e;
+  --line: rgba(17, 17, 17, 0.08);
+  --line-strong: rgba(17, 17, 17, 0.16);
+  --gutter: clamp(24px, 5vw, 88px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Editorial Serif emphasis */
+em, .editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Live indicator dot */
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--blue);
+  box-shadow: 0 0 10px rgba(255, 140, 89, 0.7);
+  animation: pulse 2.5s infinite;
+}
+
+.light .live-dot {
+  box-shadow: 0 0 10px rgba(232, 93, 30, 0.6);
+}
+
+/* Background grid overlay */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px),
+                    linear-gradient(180deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, #000 35%, transparent 100%);
+  opacity: 0.6;
+}
+
+.light .hero-grid {
+  opacity: 0.5;
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+}
+
+/* Pill link (Sarthak signature style) */
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(19, 19, 19, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  transition: all 0.25s ease;
+}
+
+.pill-link:hover {
+  background: var(--blue);
+  color: #030303;
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.pill-link-primary {
+  background: var(--blue);
+  color: #030303;
+  border-color: var(--blue);
+}
+
+.pill-link-primary:hover {
+  background: #ff7438;
+  border-color: #ff7438;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Light mode specific pill link adjustments */
+.light .pill-link {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  color: #111111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.light .pill-link:hover {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+}
+
+.light .pill-link-primary {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+  box-shadow: 0 4px 14px rgba(232, 93, 30, 0.25);
+}
+
+.light .pill-link-primary:hover {
+  background: #d44e11;
+  border-color: #d44e11;
+  color: #ffffff;
+}
+
+/* Section ribbon & eyebrows */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+/* Selection highlight */
+::selection {
+  background-color: rgba(255, 140, 89, 0.25);
+  color: var(--ink);
+}
+
+.light ::selection {
+  background-color: rgba(232, 93, 30, 0.25);
+  color: #111111;
+}
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
