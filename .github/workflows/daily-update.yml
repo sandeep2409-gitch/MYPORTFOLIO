@@ -1,0 +1,65 @@
+name: Daily README Update
+
+on:
+  schedule:
+    # Runs everyday at 00:00 UTC (05:30 AM IST)
+    - cron: '0 0 * * *'
+  # Allows triggering the workflow manually anytime from GitHub Actions UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update README with a space
+        run: |
+          python3 - << 'EOF'
+          import os
+
+          readme_path = "README.md"
+          if not os.path.exists(readme_path):
+              for f in os.listdir("."):
+                  if f.lower() == "readme.md":
+                      readme_path = f
+                      break
+
+          if not os.path.exists(readme_path):
+              raise FileNotFoundError("README.md file not found")
+
+          with open(readme_path, "r", encoding="utf-8") as f:
+              content = f.read()
+
+          marker_with_space = "<!-- daily-activity: [ ] -->"
+          marker_without_space = "<!-- daily-activity: [] -->"
+
+          if marker_with_space not in content and marker_without_space not in content:
+              content = content.rstrip() + f"\n\n{marker_with_space}\n"
+          elif marker_with_space in content:
+              content = content.replace(marker_with_space, marker_without_space)
+          else:
+              content = content.replace(marker_without_space, marker_with_space)
+
+          with open(readme_path, "w", encoding="utf-8") as f:
+              f.write(content)
+          EOF
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Sandeep Manchinasetti"
+          git config user.email "sandeepmanchinasetti007@gmail.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes detected to commit."
+          else
+            TODAY=$(date -u +"%Y-%m-%d")
+            git commit -m "chore(activity): daily readme update ${TODAY} [skip ci]"
+            git push origin HEAD:${{ github.ref }}
+          fi
